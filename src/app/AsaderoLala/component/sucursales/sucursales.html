@@ -1,0 +1,16 @@
+<div class="flex w-4/6 mx-auto ite">
+    <div>
+        <img [src]="imagen_localizacion" alt="localizacion" class="block p-5 w-5/6">
+    </div>
+    @for (sucursal of sucursales; track $index) {
+    <div class="flex flex-col justify-center">
+        <h2>
+            Localidad de : {{sucursal.localidad}}
+        </h2>
+        <p>Estado : {{sucursal.estado}}</p>
+        <p>Dirección : 
+            <cite>{{sucursal.direccion_completa}}</cite>
+        </p>
+    </div>
+    }
+</div>

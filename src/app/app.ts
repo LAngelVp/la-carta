@@ -7,20 +7,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
-    CommonModule
+    RouterOutlet
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit{
+export class App{
   protected readonly title = signal('LaCarta');
 
-  productos: ProductsModel[] = [];
-
-  constructor(private productServices : ProductServices){}
-
-  ngOnInit(): void {
-      this.productos = this.productServices.get_producto();
-  }
+  
 }
