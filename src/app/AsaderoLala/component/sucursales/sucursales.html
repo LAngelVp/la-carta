@@ -1,16 +1,56 @@
-<div class="flex w-4/6 mx-auto ite">
-    <div>
-        <img [src]="imagen_localizacion" alt="localizacion" class="block p-5 w-5/6">
+<div class="container-lg pt-4">
+    <h2 class="text-center text-3xl md:text-4xl">
+        <strong>
+            Contacto
+        </strong>
+    </h2>
+    <div class="flex flex-col-reverse md:flex-row w-4/6 mx-auto mt-4">
+        <div class="flex justify-center items-center">
+            <img [src]="imagen_localizacion" alt="localizacion" class="block p-5 w-5/6">
+        </div>
+        @for (sucursal of sucursales; track $index) {
+        <div class="flex flex-col justify-center">
+            <h2 class="md:text-xl">
+                <strong>
+                    Localidad
+                </strong> : 
+                {{sucursal.localidad}}
+            </h2>
+            <p class="md:text-xl">
+                <strong>
+                    Estado
+                </strong> : 
+                {{sucursal.estado}}
+            </p>
+            <p class="md:text-xl">
+                <strong>
+                    Número de celular:
+                </strong> : 
+                {{sucursal.numero_telefono}}
+            </p>
+            <p class="md:text-xl">
+                <strong>
+                    Dirección 
+                </strong>: 
+                <cite>{{sucursal.direccion_completa}}</cite>
+            </p>
+            <div class="flex justify-center md:justify-start gap-4 mt-3">
+                <button class="bg-yellow-600 py-2 px-3 rounded flex items-center gap-2 hover:bg-yellow-500 active:bg-yellow-700"
+                (click)="abrirUbicacion(sucursal.ubicacion)">
+                    <img src="/AsaderoLala/icons/icon_location.svg" alt="Icono de ubicación">
+                    <p class="text-white font-bold md:text-xl">
+                        Ubicación
+                    </p>
+                </button>
+                <button class="bg-yellow-600 py-2 px-3 rounded flex items-center gap-2 hover:bg-yellow-500 active:bg-yellow-700"
+                (click)="mandarMensaje(sucursal.numero_telefono_whatsapp)">
+                    <img src="/AsaderoLala/icons/numero_mensaje.svg" alt="Icono de mensaje">
+                    <p class="text-white font-bold md:text-xl">
+                        Whatsapp
+                    </p>
+                </button>
+            </div>
+        </div>
+        }
     </div>
-    @for (sucursal of sucursales; track $index) {
-    <div class="flex flex-col justify-center">
-        <h2>
-            Localidad de : {{sucursal.localidad}}
-        </h2>
-        <p>Estado : {{sucursal.estado}}</p>
-        <p>Dirección : 
-            <cite>{{sucursal.direccion_completa}}</cite>
-        </p>
-    </div>
-    }
 </div>
