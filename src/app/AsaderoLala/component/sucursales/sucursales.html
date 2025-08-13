@@ -1,5 +1,5 @@
 <div class="container-lg pt-4">
-    <h2 class="text-center text-3xl md:text-4xl uppercase">
+    <h2 class="text-center text-3xl md:text-4xl uppercase playfair">
         <strong>
             Contacto
         </strong>
@@ -10,25 +10,25 @@
         </div>
         @for (sucursal of sucursales; track $index) {
         <div class="flex flex-col justify-center">
-            <h2 class="md:text-xl">
+            <h2 class="md:text-xl lora">
                 <strong>
                     Localidad
                 </strong> : 
                 {{sucursal.localidad}}
             </h2>
-            <p class="md:text-xl">
+            <p class="md:text-xl lora">
                 <strong>
                     Estado
                 </strong> : 
                 {{sucursal.estado}}
             </p>
-            <p class="md:text-xl">
+            <p class="md:text-xl lora">
                 <strong>
                     Número de celular:
                 </strong> : 
                 {{sucursal.numero_telefono}}
             </p>
-            <p class="md:text-xl">
+            <p class="md:text-xl lora">
                 <strong>
                     Dirección 
                 </strong>: 
@@ -38,14 +38,14 @@
                 <button class="bg-yellow-600 py-2 px-3 rounded flex items-center gap-2 hover:bg-yellow-500 active:bg-yellow-700"
                 (click)="abrirUbicacion(sucursal.ubicacion)">
                     <img src="/AsaderoLala/icons/icon_location.svg" alt="Icono de ubicación">
-                    <p class="text-white font-bold md:text-xl">
+                    <p class="text-white font-bold md:text-xl raleway">
                         Ubicación
                     </p>
                 </button>
                 <button class="bg-yellow-600 py-2 px-3 rounded flex items-center gap-2 hover:bg-yellow-500 active:bg-yellow-700"
                 (click)="mandarMensaje(sucursal.numero_telefono_whatsapp)">
                     <img src="/AsaderoLala/icons/numero_mensaje.svg" alt="Icono de mensaje">
-                    <p class="text-white font-bold md:text-xl">
+                    <p class="text-white font-bold md:text-xl raleway">
                         Whatsapp
                     </p>
                 </button>
