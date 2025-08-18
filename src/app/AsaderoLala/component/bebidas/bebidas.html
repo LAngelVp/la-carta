@@ -1,0 +1,41 @@
+<div class="lista_producto">
+    @for (producto of productos; track $index) {
+        <div class="carta_producto">
+            <!-- Contenido superior (imagen, nombre, descripción) -->
+            <div class="contenido_producto">
+                <img 
+                    [src]="producto.imagen" 
+                    alt="{{ producto.nombre }}" 
+                    class="imagen_carta" 
+                />
+                <p class="nombre_producto">
+                    {{ producto.nombre }}
+                </p>
+                
+                @if (producto.presentaciones && producto.presentaciones.length > 0) {
+                    <div class="detalles_producto">
+                        <p class="descripcion">
+                            <span class="font-bold">Descripción:</span>
+                            <span class="opacity-75 font-semibold">
+                                {{ producto.presentaciones[0].descripcion }}
+                            </span>
+                        </p>
+                        <p class="precio">
+                            <span class="font-bold">Costo:</span>
+                            <span class="opacity-75 font-semibold">
+                                {{ producto.presentaciones[0].precio | currency: "$" }} pesos
+                            </span>
+                        </p>
+                    </div>
+                }
+            </div>
+
+            <!-- Botón "Ver más" (siempre abajo) -->
+            <div class="contenedor_boton">
+                <button class="btn_ver_mas">
+                    Ver más
+                </button>
+            </div>
+        </div>
+    }
+</div>

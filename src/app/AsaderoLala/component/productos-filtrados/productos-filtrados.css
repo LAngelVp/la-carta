@@ -1,0 +1,24 @@
+/* .lista_producto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.carta_producto{
+    background: #E3AD87;
+    min-width: 13em;
+    max-width: 20em;
+    box-shadow: 0px 2px 20px #979084;
+    border-radius: 15px;
+    height: 33em;
+}
+.imagen_carta{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 19em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+} */
+ /* Contenedor principal (grid de productos) */

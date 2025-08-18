@@ -1,0 +1,43 @@
+<div>
+  <div class="flex justify-center gap-2 items-center my-5 w-4/5 mx-auto">
+    <input
+      type="text"
+      [(ngModel)]="dato_a_buscar"
+      placeholder="Buscar producto..."
+      class="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+    />
+    <button (click)="buscarProducto()" class="p-2 border-red-700 border-2 rounded hover:bg-red-600">Buscar</button>
+  </div>
+  <div class="p-4 text-center rounded-t-lg">
+    <h2 class=" text-amber-500 text-2xl font-bold uppercase">
+      Menú Pollos Mary Chuy
+    </h2>
+</div>
+    <div class="flex flex-wrap justify-center gap-4 my-5">
+      <button
+        (click)="mostrarProductos('comida')"
+        class=" bg-red-700 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+      >
+        Comidas
+      </button>
+      <button
+        (click)="mostrarProductos('bebidas')"
+        class="bg-red-700 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+      >
+        Bebidas
+      </button>
+    </div>
+  </div>
+@if (productos_filtrados && productos_filtrados.length > 0 && dato_a_buscar) {
+    <app-productos-filtrados [productos]="productos_filtrados" />
+}
+
+@switch (categoriaActual) {
+    @case ('comida') {
+        <app-products [productos]="productos" />
+    }
+    @case ('bebidas') {
+        <app-bebidas [productos]="productos" />
+    }
+}
+  
