@@ -32,10 +32,18 @@
 
             <!-- Botón "Ver más" (siempre abajo) -->
             <div class="contenedor_boton">
-                <button class="btn_ver_mas">
+                <button class="btn_ver_mas" (click)="openModal(producto)">
                     Ver más
                 </button>
             </div>
         </div>
     }
 </div>
+
+@if (modalVisible()) {
+    <app-modal-detalles
+      [producto]="productoSeleccionado()"
+      [visible]="modalVisible()"
+      (cerrar)="closeModal()"
+    ></app-modal-detalles>
+}

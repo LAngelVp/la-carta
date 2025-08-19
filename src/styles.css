@@ -39,7 +39,7 @@
     border-radius: 8px;
     padding: 16px;
     background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.479);
 }
 
 /* Contenido que crece para empujar el botón abajo */

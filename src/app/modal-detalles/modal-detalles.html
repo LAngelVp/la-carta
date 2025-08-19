@@ -1,0 +1,43 @@
+<div class="modal-overlay" *ngIf="visible" (click)="cerrarModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="cerrarModal()">×</button>
+    
+    <div class="modal-header">
+      <h2 class="modal-title">{{ producto?.nombre }}</h2>
+    </div>
+
+    <div class="modal-body">
+      <img 
+        [src]="producto?.imagen" 
+        [alt]="producto?.nombre" 
+        class="modal-image"
+      />
+      
+      <div class="modal-details">
+        <h3>Presentaciones disponibles:</h3>
+        
+        <div class="presentaciones-list">
+          <div 
+            *ngFor="let presentacion of producto?.presentaciones; let i = index" 
+            class="presentacion-item"
+          >
+            <p class="presentacion-descripcion">
+              <strong>Opción {{ i + 1 }}:</strong> 
+              {{ presentacion.descripcion }}
+            </p>
+            <p class="presentacion-precio">
+              <strong>Precio:</strong> 
+              {{ presentacion.precio | currency: '$' }} pesos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cerrar" (click)="cerrarModal()">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>

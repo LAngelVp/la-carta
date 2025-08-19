@@ -9,7 +9,6 @@ import { BotonesMenu } from "../../component/botones-menu/botones-menu";
   imports: [
     Portada,
     Sucursales,
-    Products,
     BotonesMenu
 ],
   templateUrl: './menu-asadero-lala.html',
