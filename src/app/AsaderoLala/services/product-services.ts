@@ -85,7 +85,7 @@ export class ProductServices {
             precio: 310
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/costillaAsada.jpg"
       },
       {
         id: 7,
@@ -121,7 +121,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/polloDiabla.jpg"
       },
       {
         id: 10,
@@ -169,7 +169,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/polloAsadoNatural.jpg"
       },
       {
         id: 14,

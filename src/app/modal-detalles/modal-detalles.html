@@ -11,6 +11,7 @@
         [src]="producto?.imagen" 
         [alt]="producto?.nombre" 
         class="modal-image"
+        (click)="expandirImagen()"
       />
       
       <div class="modal-details">
@@ -39,5 +40,12 @@
         Cerrar
       </button>
     </div>
+  </div>
+</div>
+
+<div class="image-viewer-overlay" [class.active]="imagenExpandida" (click)="cerrarImagen()">
+  <div class="image-viewer-content" (click)="$event.stopPropagation()">
+    <button class="image-viewer-close" (click)="cerrarImagen()">×</button>
+    <img class="image-viewer-img" [src]="producto?.imagen" [alt]="'Imagen expandida de ' + producto?.nombre">
   </div>
 </div>
