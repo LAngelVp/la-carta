@@ -1,4 +1,5 @@
 export interface Price {
-  ingredient: string;
+  name?: string;
+  ingredient?: string;
   price: number;
 }
