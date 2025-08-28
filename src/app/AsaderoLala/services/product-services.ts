@@ -25,7 +25,7 @@ export class ProductServices {
             precio: 325
           },
         ],
-        imagen: "/AsaderoLala/imgs/PolloMix.jpg"
+        imagen: "/AsaderoLala/imgs/ParrillaYanga.jpg"
       },
       {
         id: 2,
@@ -37,7 +37,7 @@ export class ProductServices {
             precio: 310
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/CarnesMix1.jpg"
       },
       {
         id: 3,
@@ -49,7 +49,7 @@ export class ProductServices {
             precio: 310
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/CostiPollo.jpg"
       },
       {
         id: 4,
@@ -61,7 +61,7 @@ export class ProductServices {
             precio: 310
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/CostillaMix.jpg"
       },
       {
         id: 5,
@@ -121,7 +121,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/polloDiabla.jpg"
+        imagen: "/AsaderoLala/imgs/PolloALaDiabla1.jpg"
       },
       {
         id: 10,

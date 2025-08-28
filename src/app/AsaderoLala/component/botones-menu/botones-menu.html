@@ -4,25 +4,25 @@
       type="text"
       [(ngModel)]="dato_a_buscar"
       placeholder="Buscar producto..."
-      class="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+      class="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 text-white font-bold"
     />
-    <button (click)="buscarProducto()" class="p-2 border-red-700 border-2 rounded hover:bg-red-600">Buscar</button>
+    <button (click)="buscarProducto()" class="p-2 border-red-700 border-2 rounded hover:bg-red-600 text-white uppercase font-bold cursor-pointer">Buscar</button>
   </div>
   <div class="p-4 text-center rounded-t-lg">
-    <h2 class=" playfair md:text-3xl font-bold uppercase">
+    <h2 class=" text-white playfair md:text-3xl font-bold uppercase">
       Menu
     </h2>
 </div>
     <div class="flex flex-wrap justify-center gap-4 my-5">
       <button
         (click)="mostrarProductos('comida')"
-        class=" bg-orange-500 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out raleway font-bold"
+        class=" bg-orange-500 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out raleway font-bold cursor-pointer"
       >
         Comidas
       </button>
       <button
         (click)="mostrarProductos('bebidas')"
-        class="bg-orange-500 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out raleway font-bold"
+        class="bg-orange-500 text-white px-4 py-2 rounded uppercase shadow-md hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out raleway font-bold cursor-pointer"
       >
         Bebidas
       </button>

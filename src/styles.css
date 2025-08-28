@@ -95,3 +95,6 @@
 .btn_ver_mas:hover {
     background: #2563eb;
 }
+.btn_ver_mas:focus {
+    background: #23448a;
+}
