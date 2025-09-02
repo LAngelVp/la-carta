@@ -11,8 +11,8 @@ export const routes: Routes = [
         canDeactivate: [stayOnUrlGuard]
     },
     {
-        path: "rincon",
-        component: Home
+      path: "",
+      component: Home
     },
     {
         path: "**", // Cualquier otra ruta
