@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { ComidaInterface } from '../AsaderoLala/models/products-model';
+import { BebidasInterface, ComidaInterface } from '../AsaderoLala/models/products-model';
 
 @Component({
   selector: 'app-modal-detalles',
@@ -11,7 +11,7 @@ import { ComidaInterface } from '../AsaderoLala/models/products-model';
   styleUrl: './modal-detalles.css'
 })
 export class ModalDetalles {
-  @Input() producto: ComidaInterface | null = null;
+  @Input() producto: ComidaInterface | BebidasInterface | null = null;
   @Input() visible: boolean = false;
   @Output() cerrar = new EventEmitter<void>();
 

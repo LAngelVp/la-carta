@@ -1,36 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { BebidasInterface } from '../../models/products-model';
+import { Component, Input, signal } from '@angular/core';
+import { BebidasInterface, ComidaInterface } from '../../models/products-model';
+import { ModalDetalles } from '../../../modal-detalles/modal-detalles';
 
 @Component({
   selector: 'app-bebidas',
   imports: [
-    CommonModule
+    CommonModule,
+    ModalDetalles
   ],
   templateUrl: './bebidas.html',
   styleUrl: './bebidas.css'
 })
 export class Bebidas {
+  productoSeleccionado = signal<BebidasInterface | null>(null);
+  modalVisible = signal<boolean>(false);
   @Input() productos: BebidasInterface[] = [];
-  modalOpen: boolean = false;
-  selectedProducto: any = null;
-  imagenAmpliada: string | null = null;
   
-  openModal(producto: any) {
-    console.log(this.productos);
-    this.selectedProducto = producto;
-    this.modalOpen = true;
+  openModal(producto: BebidasInterface): void {
+    this.productoSeleccionado.set(producto);
+    this.modalVisible.set(true);
   }
 
-  closeModal() {
-    this.modalOpen = false;
-    this.selectedProducto = null;
+  closeModal(): void {
+    this.modalVisible.set(false);
+    this.productoSeleccionado.set(null);
   }
-  verImagen(imagen: string): void {
-  this.imagenAmpliada = imagen;
-}
-
-cerrarImagen(): void {
-  this.imagenAmpliada = null;
-}
 }

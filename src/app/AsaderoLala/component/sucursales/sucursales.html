@@ -1,15 +1,15 @@
-<div class="container-lg pt-4 bg-amber-700 shadow shadow-lg shadow-orange-400 opacity-75">
-    <h2 class="text-center text-3xl md:text-4xl uppercase playfair text-white">
+<div class="container-lg pt-4 bg-white  shadow shadow-lg shadow-orange-400 opacity-75 contenedor_sucursales flex flex-col justify-center">
+    <h2 class="text-center text-3xl md:text-4xl uppercase playfair">
         <strong>
             Contacto
         </strong>
     </h2>
-    <div class="flex flex-col-reverse md:flex-row w-4/6 mx-auto mt-4">
+    <div class="flex flex-col-reverse md:flex-row w-4/6 mx-auto my-4">
         <div class="flex justify-center items-center">
-            <img [src]="imagen_localizacion" alt="localizacion" class="block p-5 w-5/6">
+            <img [src]="imagen_localizacion" alt="localizacion" class="block p-5">
         </div>
         @for (sucursal of sucursales; track $index) {
-        <div class="flex flex-col justify-center text-white">
+        <div class="flex flex-col justify-center">
             <h2 class="md:text-xl lora">
                 <strong>
                     Localidad

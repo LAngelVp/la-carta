@@ -15,6 +15,12 @@
                 @if (producto.presentaciones && producto.presentaciones.length > 0) {
                     <div class="detalles_producto">
                         <p class="descripcion">
+                            <span class="font-bold">Nombre:</span>
+                            <span class="opacity-75 font-semibold">
+                                {{ producto.presentaciones[0].nombre_presentacion }}
+                            </span>
+                        </p>
+                        <p class="descripcion">
                             <span class="font-bold">Descripción:</span>
                             <span class="opacity-75 font-semibold">
                                 {{ producto.presentaciones[0].descripcion }}
@@ -32,10 +38,18 @@
 
             <!-- Botón "Ver más" (siempre abajo) -->
             <div class="contenedor_boton">
-                <button class="btn_ver_mas">
+                <button class="btn_ver_mas playfair" (click)="openModal(producto)">
                     Ver más
                 </button>
             </div>
         </div>
     }
 </div>
+
+@if (modalVisible()) {
+    <app-modal-detalles
+      [producto]="productoSeleccionado()"
+      [visible]="modalVisible()"
+      (cerrar)="closeModal()"
+    ></app-modal-detalles>
+}

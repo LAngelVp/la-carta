@@ -15,12 +15,12 @@ export class ProductServices {
         nombre : "Parrilla Yanga",
         presentaciones: [
           {
-            presentacion: "pollo entero",
+            nombre_presentacion: "pollo entero",
             descripcion: "Pollo entero con 400 gramos de cecina y arrachera, 1/4 de chistorra, chorizos argentinos, salchichas para asar, acompañado de nopales, cebolla, chiles toreados, arroz, frijoles y salsa.",
             precio: 395
           },
           {
-            presentacion: "medio pollo",
+            nombre_presentacion: "medio pollo",
             descripcion: "Pollo entero con 1/4  de cecina, 1/4 de chistorra, chorizos argentinos, salchichas para asar, acompañado de nopales, cebolla, chiles toreados, arroz, frijoles y salsa.",
             precio: 325
           },
@@ -32,7 +32,7 @@ export class ProductServices {
         nombre : "Carnes Mix Asada",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "Paquete de cecina, arrachera, chistorra, chorizo argentino, salchicas asadera, nopales, cebollitas, chiles toreados, frijoles, salsa y limones.",
             precio: 310
           }
@@ -44,7 +44,7 @@ export class ProductServices {
         nombre : "Costi-Pollo",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "Medio pollo asado, 1/4 de costilla, 1/4 de chistorra, chorizo argentino, salchicas asadera. Acompañado de nopales, cebollitas, chiles toreados, salsa, arroz y frijoles.",
             precio: 310
           }
@@ -56,7 +56,7 @@ export class ProductServices {
         nombre : "Costilla Mix",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "Costilla, chistorra, chorizo argentino, salchicas asadera con nopales, chiles toreados, cebollitas, salsa y arroz.",
             precio: 310
           }
@@ -68,7 +68,7 @@ export class ProductServices {
         nombre : "Pollo en salsa Macha",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo asado bañado en sala macha 100% casera con el sabor y toque original. Acompañado de arroz y frijoles.",
             precio: 250
           }
@@ -80,7 +80,7 @@ export class ProductServices {
         nombre : "Costilla de cerdo asada",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "1 kilo de costilla asada acompañada de nopales, cebollitas, chiles toreados, salsa y arroz.",
             precio: 310
           }
@@ -92,7 +92,7 @@ export class ProductServices {
         nombre : "Pollo en salsa BBQ",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "Pollo bañado en salsa BBQ acompañado de arroz, frijoles y salsa.",
             precio: 250
           }
@@ -104,7 +104,7 @@ export class ProductServices {
         nombre : "Mega parrilla yanga",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "Pollo, costilla, carne, chistorra, chorizo argentino, elote, platano asado, nopales, cebollitas, chiles toreados, arroz, salsa y frijoles.",
             precio: 750
           }
@@ -116,7 +116,7 @@ export class ProductServices {
         nombre : "Pollo a la diabla",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo asado bañado en salsa diabla picosita elaborada con chile seco y secretos culinarios que hacen la salsa muy deliciosa, acompañado de una orden de arroz y una de frijoles.",
             precio: 250
           }
@@ -128,31 +128,31 @@ export class ProductServices {
         nombre : "Pollo a la crema",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo bañado con chiles chipotles en escabeche, jitomate, cebolla rebanada y crema encima.",
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/polloCrema.png"
       },
       {
         id: 11,
         nombre : "Pollo a la mantequilla",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo asado bañado con mantequilla y papitas cambray, con un sazon unico e inigualable.",
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/polloMantequilla2.png"
       },
       {
         id: 12,
         nombre : "Pollo en salsa macha cacahuate",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo asado bañado en salsa de cacahuate acompañado de arroz, salsa y frijoles.",
             precio: 250
           }
@@ -164,7 +164,7 @@ export class ProductServices {
         nombre : "Pollo asado natural",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo asado con nopales, cebolla, chiles toreados, arroz y salsa.",
             precio: 250
           }
@@ -176,7 +176,7 @@ export class ProductServices {
         nombre : "Pollo mix especial",
         presentaciones: [
           {
-            presentacion: "Completo",
+            nombre_presentacion: "Completo",
             descripcion: "Pollo con mas de 250 gramos de chistorra, 2 chorizos argentinos, nopales, cebollitas, chiles toreados, arroz, salsa y frijoles.",
             precio: 295
           }
@@ -188,7 +188,7 @@ export class ProductServices {
         nombre : "Orden de chistorra",
         presentaciones: [
           {
-            presentacion: "Orden",
+            nombre_presentacion: "Orden",
             descripcion: "1/4 de chistorra, 2 chorizos argentinos, cebollitas, chiles toreados, nopales, arroz y salsa.",
             precio: 295
           }
@@ -199,15 +199,31 @@ export class ProductServices {
     bebidas: [
       {
         id: 1,
-        nombre: "Coca cola",
+        nombre: "Cervezas",
+        descripcioGeneral: "Cervezas de la empresa de Cerveceria Moctezuma",
         presentaciones: [
           {
-            presentacion: "600 ml",
-            descripcion: "Coca cola de 600 ml de botella de plastico.",
+            nombre_presentacion: "Dos X 355ml",
+            descripcion: "Cerveza de cristal",
             precio: 28
-          }
+          },
+          {
+            nombre_presentacion: "Dos X ambar 355ml",
+            descripcion: "",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Indio 355ml",
+            descripcion: "",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Carta Blanca 355ml",
+            descripcion: "",
+            precio: 28
+          },
         ],
-        imagen: "/AsaderoLala/imgs/PolloMix.jpg"
+        imagen: "/AsaderoLala/imgs/moctezumaLogo.png"
       }
     ]
   };

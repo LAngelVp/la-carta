@@ -9,13 +9,14 @@ export interface ComidaInterface{
     imagen: string;
 }
 export interface Presentaciones {
-    presentacion: string;
+    nombre_presentacion: string;
     descripcion: string;
     precio: number;
 }
 export interface BebidasInterface{
     id: number;
     nombre: string;
+    descripcioGeneral: string;
     presentaciones: Presentaciones[];
     imagen: string;
 }

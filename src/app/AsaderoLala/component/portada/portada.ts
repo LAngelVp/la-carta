@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './portada.css'
 })
 export class Portada {
-  imagen_portada : string= "/AsaderoLala/imgs/polloALaLeñaHeader.jpg";
+  imagen_portada : string= "/AsaderoLala/imgs/asadorPollos.png";
   titulo_del_negocio : string= "asadero doña lala";
 }

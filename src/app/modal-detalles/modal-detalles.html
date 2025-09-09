@@ -18,19 +18,27 @@
         <h3>Presentaciones disponibles:</h3>
         
         <div class="presentaciones-list">
-          <div 
-            *ngFor="let presentacion of producto?.presentaciones; let i = index" 
-            class="presentacion-item"
-          >
-            <p class="presentacion-descripcion">
-              <strong>Opción {{ i + 1 }}:</strong> 
-              {{ presentacion.descripcion }}
-            </p>
-            <p class="presentacion-precio">
-              <strong>Precio:</strong> 
-              {{ presentacion.precio | currency: '$' }} pesos
-            </p>
-          </div>
+          @for (presentacion of producto?.presentaciones; track $index) {
+            <div 
+              class="presentacion-item"
+            >
+            @if (presentacion) {
+              <strong>
+                Opción {{ $index + 1 }}:
+                <p class="presentacion-descripcion">
+                  {{ presentacion.nombre_presentacion }}
+                </p>
+              </strong> 
+              <p class="presentacion-descripcion">
+                {{ presentacion.descripcion }}
+              </p>
+              <p class="presentacion-precio">
+                <strong>Precio:</strong> 
+                {{ presentacion.precio | currency: '$' }} pesos
+              </p>
+            }
+            </div>
+          }
         </div>
       </div>
     </div>
