@@ -21,7 +21,7 @@ interface Sucursal {
 })
 export class Sucursales {
   titulo: string = "Sucursales";
-  imagen_localizacion : string = "/AsaderoLala/icons/maps.png"
+  imagen_localizacion : string = "/AsaderoLala/imgs/logoAsaderoLala.png"
 
   sucursales: Sucursal[] = [
     {

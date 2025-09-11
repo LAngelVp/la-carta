@@ -224,7 +224,40 @@ export class ProductServices {
           },
         ],
         imagen: "/AsaderoLala/imgs/moctezumaLogo.png"
-      }
+      },
+      {
+        id: 2,
+        nombre: "Coca Cola",
+        descripcioGeneral: "Refresco de la marca de Coca Cola",
+        presentaciones: [
+          {
+            nombre_presentacion: "Coca de 600 Millitros",
+            descripcion: "Una opción popular para el consumo diario.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Coca de 1 Litro",
+            descripcion: "Perfecta para compartir en pequeñas reuniones.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Coca de 2 Litros",
+            descripcion: "Ideal para reuniones familiares y eventos.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Coca de 2.5 Litros",
+            descripcion: "La opción más grande, perfecta para eventos y grandes reuniones.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Coca de Lata de 355 Mililitros",
+            descripcion: "El tamaño estándar y más común.",
+            precio: 28
+          },
+        ],
+        imagen: "/AsaderoLala/imgs/CocaColaIcono.svg"
+      },
     ]
   };
 
