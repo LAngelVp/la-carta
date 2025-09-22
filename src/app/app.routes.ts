@@ -8,12 +8,12 @@ export const routes: Routes = [
     {
         path: "asadero-doña-lala",
         component: MenuAsaderoLala,
-        canDeactivate: [stayOnUrlGuard]
+        canActivate: [stayOnUrlGuard]
     },
     {
         path: "elRinconcito",
         component: HomeRinconcito,
-        canDeactivate: [stayOnUrlGuard]
+        canActivate: [stayOnUrlGuard]
     },
     {
       path: "",
