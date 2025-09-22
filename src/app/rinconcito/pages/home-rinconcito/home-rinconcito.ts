@@ -7,19 +7,17 @@ interface CarouselItem {
   imageSrc: string;
   imageAlt: string;
 }
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-rinconcito',
   imports: [
     Carousel,
     MenuCategories,
     CommonModule
   ],
-  templateUrl: './home.html',
-  styleUrl: './home.css'
+  templateUrl: './home-rinconcito.html',
+  styleUrl: './home-rinconcito.css'
 })
-export class Home {
-
+export class HomeRinconcito {
   title = 'my-carousel-app';
 
   carouselSlides: CarouselItem[] = [
@@ -36,5 +34,4 @@ export class Home {
     console.log(`AppComponent recibió la categoría: ${categoryName}`);
     // Aquí podrías añadir lógica para filtrar ítems del menú basándote en la categoría seleccionada
   }
-
 }
