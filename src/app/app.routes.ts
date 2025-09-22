@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
 import { MenuAsaderoLala } from './AsaderoLala/pages/menu-asadero-lala/menu-asadero-lala';
-import { stayOnUrlGuard } from './guards/stay-on-url-guard';
 import { NotFound } from './componentesGlobales/not-found/not-found';
 import { HomeRinconcito } from './rinconcito/pages/home-rinconcito/home-rinconcito';
+import { stayOnUrlGuard } from './guards/stay-on-url-guard';
 
 export const routes: Routes = [
     {
         path: "asadero-doña-lala",
         component: MenuAsaderoLala,
-        canActivate: [stayOnUrlGuard]
+        canActivate: [stayOnUrlGuard]  // ✅ Correcto
     },
     {
         path: "elRinconcito",
-        component: HomeRinconcito,
-        canActivate: [stayOnUrlGuard]
+        component: HomeRinconcito, 
+        canActivate: [stayOnUrlGuard]  // ✅ Correcto
     },
     {
       path: "",

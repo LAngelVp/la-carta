@@ -8,103 +8,133 @@ import { filter } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DeteccionUrl {
-private currentUrl: string = '';
-  private initialUrl: string = '';
-  private shouldStayOnUrl: boolean = true;
-  private isBrowser: boolean;
-  
-  public stayOnUrlState = new BehaviorSubject<boolean>(true);
+  private initialRoute: string | null = null;
 
-  constructor(
-    private router: Router,
-    @Inject(PLATFORM_ID) private platformId: any
-  ) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-    
-    if (this.isBrowser) {
-      this.initializeBrowserLogic();
+  setInitialRoute(route: string): void {
+    this.initialRoute = route;
+    // Opcional: guardar en sessionStorage para persistir entre recargas
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.setItem('initialRoute', route);
     }
   }
 
-  private initializeBrowserLogic(): void {
-    // Capturar la URL inicial solo en el navegador
-    this.initialUrl = window.location.href;
-    console.log('URL inicial detectada:', this.initialUrl);
-
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.currentUrl = event.urlAfterRedirects;
-        console.log('URL actual:', this.currentUrl);
-        
-        if (this.shouldStayOnUrl && this.currentUrl !== this.initialUrl) {
-          this.redirectToInitialUrl();
-        }
-      });
-
-    this.verifyUrlOnInit();
+  getInitialRoute(): string | null {
+    if (!this.initialRoute && typeof sessionStorage !== 'undefined') {
+      this.initialRoute = sessionStorage.getItem('initialRoute');
+    }
+    return this.initialRoute;
   }
 
-  private verifyUrlOnInit(): void {
-    if (!this.isBrowser) return;
-
-    setTimeout(() => {
-      if (window.location.href !== this.initialUrl) {
-        console.log('URL modificada al iniciar. Redirigiendo...');
-        this.redirectToInitialUrl();
-      }
-    }, 50);
-  }
-
-  private redirectToInitialUrl(): void {
-    if (!this.isBrowser) return;
-
-    console.log('Redirigiendo a URL inicial:', this.initialUrl);
-    
-    this.router.navigateByUrl(this.getUrlPath(this.initialUrl), { 
-      replaceUrl: true,
-      skipLocationChange: false 
-    }).then(() => {
-      if (window.location.href !== this.initialUrl) {
-        window.location.href = this.initialUrl;
-      }
-    });
-  }
-
-  private getUrlPath(fullUrl: string): string {
-    if (!this.isBrowser) return '';
-
-    try {
-      const url = new URL(fullUrl);
-      return url.pathname + url.search + url.hash;
-    } catch {
-      return fullUrl;
+  // Método para resetear si es necesario
+  resetInitialRoute(): void {
+    this.initialRoute = null;
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.removeItem('initialRoute');
     }
   }
 
-  getInitialUrl(): string {
-    return this.initialUrl;
-  }
-
+  // Mantener tu método existente si lo usas
   isStayOnUrlEnabled(): boolean {
-    return this.shouldStayOnUrl && this.isBrowser;
+    return true; // o tu lógica específica
   }
 
-  getCurrentUrl(): string {
-    if (!this.isBrowser) return '';
-    return this.currentUrl || window.location.href;
-  }
+// private currentUrl: string = '';
+//   private initialUrl: string = '';
+//   private shouldStayOnUrl: boolean = true;
+//   private isBrowser: boolean;
+  
+//   public stayOnUrlState = new BehaviorSubject<boolean>(true);
 
-  forceUrlVerification(): void {
-    if (!this.isBrowser) return;
+//   constructor(
+//     private router: Router,
+//     @Inject(PLATFORM_ID) private platformId: any
+//   ) {
+//     this.isBrowser = isPlatformBrowser(this.platformId);
     
-    if (window.location.href !== this.initialUrl) {
-      this.redirectToInitialUrl();
-    }
-  }
+//     if (this.isBrowser) {
+//       this.initializeBrowserLogic();
+//     }
+//   }
 
-  // Método seguro para verificar si estamos en el navegador
-  isRunningInBrowser(): boolean {
-    return this.isBrowser;
-  }
+//   private initializeBrowserLogic(): void {
+//     // Capturar la URL inicial solo en el navegador
+//     this.initialUrl = window.location.href;
+//     console.log('URL inicial detectada:', this.initialUrl);
+
+//     this.router.events
+//       .pipe(filter(event => event instanceof NavigationEnd))
+//       .subscribe((event: NavigationEnd) => {
+//         this.currentUrl = event.urlAfterRedirects;
+//         console.log('URL actual:', this.currentUrl);
+        
+//         if (this.shouldStayOnUrl && this.currentUrl !== this.initialUrl) {
+//           this.redirectToInitialUrl();
+//         }
+//       });
+
+//     this.verifyUrlOnInit();
+//   }
+
+//   private verifyUrlOnInit(): void {
+//     if (!this.isBrowser) return;
+
+//     setTimeout(() => {
+//       if (window.location.href !== this.initialUrl) {
+//         console.log('URL modificada al iniciar. Redirigiendo...');
+//         this.redirectToInitialUrl();
+//       }
+//     }, 50);
+//   }
+
+//   private redirectToInitialUrl(): void {
+//     if (!this.isBrowser) return;
+
+//     console.log('Redirigiendo a URL inicial:', this.initialUrl);
+    
+//     this.router.navigateByUrl(this.getUrlPath(this.initialUrl), { 
+//       replaceUrl: true,
+//       skipLocationChange: false 
+//     }).then(() => {
+//       if (window.location.href !== this.initialUrl) {
+//         window.location.href = this.initialUrl;
+//       }
+//     });
+//   }
+
+//   private getUrlPath(fullUrl: string): string {
+//     if (!this.isBrowser) return '';
+
+//     try {
+//       const url = new URL(fullUrl);
+//       return url.pathname + url.search + url.hash;
+//     } catch {
+//       return fullUrl;
+//     }
+//   }
+
+//   getInitialUrl(): string {
+//     return this.initialUrl;
+//   }
+
+//   isStayOnUrlEnabled(): boolean {
+//     return this.shouldStayOnUrl && this.isBrowser;
+//   }
+
+//   getCurrentUrl(): string {
+//     if (!this.isBrowser) return '';
+//     return this.currentUrl || window.location.href;
+//   }
+
+//   forceUrlVerification(): void {
+//     if (!this.isBrowser) return;
+    
+//     if (window.location.href !== this.initialUrl) {
+//       this.redirectToInitialUrl();
+//     }
+//   }
+
+//   // Método seguro para verificar si estamos en el navegador
+//   isRunningInBrowser(): boolean {
+//     return this.isBrowser;
+//   }
 }
