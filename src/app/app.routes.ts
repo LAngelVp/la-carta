@@ -7,25 +7,25 @@ import { stayOnUrlGuard } from './guards/stay-on-url-guard';
 export const routes: Routes = [
     {
         path: "asadero-doña-lala",
-        component: MenuAsaderoLala,
-        canActivate: [stayOnUrlGuard]  // ✅ Correcto
+        loadComponent: () => 
+            import('./AsaderoLala/pages/menu-asadero-lala/menu-asadero-lala')
+                .then(c => c.MenuAsaderoLala),
+        canActivate: [stayOnUrlGuard]
     },
     {
         path: "elRinconcito",
-        component: HomeRinconcito, 
-        canActivate: [stayOnUrlGuard]  // ✅ Correcto
+        loadComponent: () => 
+            import('./rinconcito/pages/home-rinconcito/home-rinconcito')
+                .then(c => c.HomeRinconcito),
+        canActivate: [stayOnUrlGuard]
     },
     {
-      path: "",
-      component: NotFound
-    },
-    {
-        path: "**", // Cualquier otra ruta
-        component: NotFound, // Redirigir siempre a la misma
-        pathMatch: 'full'
+        path: "",
+        component: NotFound
     },
     {
         path: "**",
-        component: NotFound
+        component: NotFound,
+        pathMatch: 'full'
     }
 ];
