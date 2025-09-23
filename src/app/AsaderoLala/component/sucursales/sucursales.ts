@@ -7,7 +7,7 @@ interface Sucursal {
   localidad: string;
   estado: string;
   direccion_completa: string;
-  numero_telefono: number;
+  numero_telefono: string;
   numero_telefono_whatsapp: string;
   ubicacion: string;
 }
@@ -31,7 +31,7 @@ export class Sucursales {
       localidad: "Yanga",
       estado: "Veracruz",
       direccion_completa: 'Avenida 1 #901 en intersección con calle 9 a un costado de refaccionaria Aquiles, CP: 94930.',
-      numero_telefono: 2711808108,
+      numero_telefono: '2711808108',
       numero_telefono_whatsapp: "+522711808108",
       ubicacion: "https://maps.app.goo.gl/CHDQgkzbWKLyW7Bg6"
     }
