@@ -73,7 +73,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
       {
         id: 6,
@@ -97,7 +97,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
       {
         id: 8,
@@ -109,7 +109,7 @@ export class ProductServices {
             precio: 750
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
       {
         id: 9,
@@ -157,7 +157,7 @@ export class ProductServices {
             precio: 250
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
       {
         id: 13,
@@ -166,7 +166,7 @@ export class ProductServices {
           {
             nombre_presentacion: "Completo",
             descripcion: "Pollo asado con nopales, cebolla, chiles toreados, arroz y salsa.",
-            precio: 250
+            precio: 225
           }
         ],
         imagen: "/AsaderoLala/imgs/polloAsadoNatural.jpg"
@@ -181,7 +181,7 @@ export class ProductServices {
             precio: 295
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
       {
         id: 15,
@@ -190,10 +190,10 @@ export class ProductServices {
           {
             nombre_presentacion: "Orden",
             descripcion: "1/4 de chistorra, 2 chorizos argentinos, cebollitas, chiles toreados, nopales, arroz y salsa.",
-            precio: 295
+            precio: 100
           }
         ],
-        imagen: "/AsaderoLala/imgs/asaderodoñalala2.jpg"
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       }
     ],
     bebidas: [
@@ -213,6 +213,11 @@ export class ProductServices {
             precio: 28
           },
           {
+            nombre_presentacion: "XX Lager 325ml",
+            descripcion: "",
+            precio: 28
+          },
+          {
             nombre_presentacion: "Indio 355ml",
             descripcion: "",
             precio: 28
@@ -222,41 +227,79 @@ export class ProductServices {
             descripcion: "",
             precio: 28
           },
+          {
+            nombre_presentacion: "XX Lager 940 ml",
+            descripcion: "",
+            precio: 28
+          },
         ],
         imagen: "/AsaderoLala/imgs/moctezumaLogo.png"
       },
       {
         id: 2,
-        nombre: "Coca Cola",
-        descripcioGeneral: "Refresco de la marca de Coca Cola",
+        nombre: "Refrescos",
+        descripcioGeneral: "Distintas presentaciones de refrescos",
         presentaciones: [
+          {
+            nombre_presentacion: "Coca Cola de 355 Mililitros",
+            descripcion: "El tamaño estándar y más común.",
+            precio: 28
+          },
           {
             nombre_presentacion: "Coca de 600 Millitros",
             descripcion: "Una opción popular para el consumo diario.",
             precio: 28
           },
           {
-            nombre_presentacion: "Coca de 1 Litro",
+            nombre_presentacion: "Coca Cola de 1 Litro",
             descripcion: "Perfecta para compartir en pequeñas reuniones.",
             precio: 28
           },
           {
-            nombre_presentacion: "Coca de 2 Litros",
+            nombre_presentacion: "Coca Cola de 2 Litros",
             descripcion: "Ideal para reuniones familiares y eventos.",
             precio: 28
           },
           {
-            nombre_presentacion: "Coca de 2.5 Litros",
+            nombre_presentacion: "Coca Cola de 2.5 Litros",
+            descripcion: "La opción intermedia, perfecta para eventos y grandes reuniones.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Coca Cola de 3 Litros",
             descripcion: "La opción más grande, perfecta para eventos y grandes reuniones.",
             precio: 28
           },
           {
-            nombre_presentacion: "Coca de Lata de 355 Mililitros",
-            descripcion: "El tamaño estándar y más común.",
+            nombre_presentacion: "Sidral Mundet 1 Litro",
+            descripcion: "La opción perfecta para compartir con alguien más.",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Sidral Mundet 2 Litros",
+            descripcion: "La opción intermedia, perfecta para eventos y grandes reuniones.",
             precio: 28
           },
         ],
         imagen: "/AsaderoLala/imgs/CocaColaIcono.svg"
+      },
+      {
+        id: 3,
+        nombre: "Aguas",
+        descripcioGeneral: "Agua Simple",
+        presentaciones: [
+          {
+            nombre_presentacion: "Botella de 500 mililitros",
+            descripcion: "",
+            precio: 28
+          },
+          {
+            nombre_presentacion: "Botella de 1 Litro",
+            descripcion: "",
+            precio: 28
+          },
+        ],
+        imagen: "/AsaderoLala/imgs/logoAsaderoLala.png"
       },
     ]
   };

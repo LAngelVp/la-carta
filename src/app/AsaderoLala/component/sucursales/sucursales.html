@@ -1,4 +1,4 @@
-<div class="md:container-lg pt-4 bg-white  shadow shadow-lg shadow-orange-400 opacity-75 contenedor_sucursales flex flex-col justify-center">
+<div class="md:container-lg py-4 bg-white  shadow shadow-lg shadow-orange-400 opacity-90 contenedor_sucursales flex flex-col justify-center">
     <h2 class="text-center text-3xl md:text-4xl uppercase playfair">
         <strong>
             Contacto
@@ -52,5 +52,17 @@
             </div>
         </div>
         }
+    </div>
+    <div>
+        <app-instalaciones
+        [images]="galleryImages"
+        [showThumbnails]="true"
+        [autoPlay]="true"
+        [autoPlayDelay]="5000"
+        [showLightbox]="true"
+        [gridLayout]="false"
+        [columns]="3"
+        (imageClick)="onImageClick($event)">
+        </app-instalaciones>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { GalleryImage, Instalaciones } from '../instalaciones/instalaciones';
 
 interface Sucursal {
   id: number;
@@ -14,7 +15,8 @@ interface Sucursal {
 @Component({
   selector: 'app-sucursales',
   imports: [
-    CommonModule
+    CommonModule,
+    Instalaciones
   ],
   templateUrl: './sucursales.html',
   styleUrl: './sucursales.css'
@@ -42,5 +44,40 @@ export class Sucursales {
     const mensaje = "Quiero realizar una orden desde su pagina web, me gustaría ordenar.../n";
     const urlWhatsapp = `https://wa.me/${numero_whatsapp}?text=${mensaje}`;
     window.open(urlWhatsapp, '_blank', 'noopener,noreferrer');
+  }
+
+  // Array de imágenes para la galería
+  galleryImages: GalleryImage[] = [
+    {
+      src: '/AsaderoLala/imgs/instalaciones/intslacion1.jpg',
+      alt: 'Nuestras modernas instalaciones',
+      thumbnail: '/AsaderoLala/imgs/instalaciones/intslacion1.jpg'
+    },
+    {
+      src: '/AsaderoLala/imgs/instalaciones/instalacion2.jpg',
+      alt: 'Nuestras modernas instalaciones',
+      thumbnail: '/AsaderoLala/imgs/instalaciones/instalacion2.jpg'
+    },
+    {
+      src: '/AsaderoLala/imgs/instalaciones/instalacion3.jpg',
+      alt: 'Nuestras modernas instalaciones',
+      thumbnail: '/AsaderoLala/imgs/instalaciones/instalacion3.jpg'
+    },
+    {
+      src: '/AsaderoLala/imgs/instalaciones/instalacion4.jpg',
+      alt: 'Nuestras modernas instalaciones',
+      thumbnail: '/AsaderoLala/imgs/instalaciones/instalacion4.jpg'
+    },
+    {
+      src: '/AsaderoLala/imgs/instalaciones/instalacion5.jpg',
+      alt: 'Nuestras modernas instalaciones',
+      thumbnail: '/AsaderoLala/imgs/instalaciones/instalacion5.jpg'
+    },
+  ];
+
+  // Método para manejar el click en las imágenes
+  onImageClick(image: GalleryImage) {
+    console.log('Imagen clickeada en el padre:', image);
+    // Aquí puedes abrir un modal, navegar a otra página, etc.
   }
 }

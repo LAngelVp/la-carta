@@ -9,7 +9,7 @@
                     class="imagen_carta" 
                 />
                 <p class="nombre_producto">
-                    {{ producto.nombre }}
+                    {{ producto.nombre | uppercase}}
                 </p>
                 
                 @if (producto.presentaciones && producto.presentaciones.length > 0) {
