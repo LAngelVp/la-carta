@@ -8,4 +8,6 @@ export interface Product {
   sizes?: Size[]
   presentations?: Presentation[]
   price?: number;
+  image: string | null;
+
 }

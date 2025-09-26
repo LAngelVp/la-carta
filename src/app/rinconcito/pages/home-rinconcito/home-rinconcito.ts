@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal, Signal } from '@angular/core';
 import { Carousel } from '../../components/carousel/carousel';
-import { MenuCategories } from '../../components/menu-categories/menu-categories';
 import { CommonModule } from '@angular/common';
+import { Cabecera } from "../../components/cabecera/cabecera";
+import { ProductsMenu } from '../../services/products-menu';
+import { Category } from '../../models/category.model';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 interface CarouselItem {
   imageSrc: string;
@@ -11,27 +14,37 @@ interface CarouselItem {
   selector: 'app-home-rinconcito',
   imports: [
     Carousel,
-    MenuCategories,
-    CommonModule
-  ],
+    CommonModule,
+    Cabecera
+],
   templateUrl: './home-rinconcito.html',
   styleUrl: './home-rinconcito.css'
 })
 export class HomeRinconcito {
   title = 'my-carousel-app';
+  tituloEspecialidades : string = "especialidades del menú";
+  private productosServicio = inject(ProductsMenu);
+  especialidades = signal<Category[]>([]);
 
-  carouselSlides: CarouselItem[] = [
-    { imageSrc: 'https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png', imageAlt: 'Angular Slide 1' },
-    { imageSrc: 'https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png', imageAlt: 'Angular Slide 2' },
-    { imageSrc: 'https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png', imageAlt: 'Angular Slide 3' },
-    { imageSrc: 'https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png', imageAlt: 'Angular Slide 4' },
-  ];
+  constructor() {
+    this.obtenerEspecialidadesServicio();
+  }
 
-  currentSelectedCategory: string = '';
-
-  onCategorySelected(categoryName: string): void {
-    this.currentSelectedCategory = categoryName;
-    console.log(`AppComponent recibió la categoría: ${categoryName}`);
-    // Aquí podrías añadir lógica para filtrar ítems del menú basándote en la categoría seleccionada
+  obtenerEspecialidadesServicio() {
+    try {
+      const data = this.productosServicio.getEspecialidades();
+      
+      if (data) {
+        // Si encontramos la categoría, la convertimos a array
+        this.especialidades.set([data]);
+      } else {
+        // Si no se encuentra, array vacío
+        this.especialidades.set([]);
+        console.warn('No se encontró la categoría "Lo Imperdible"');
+      }
+    } catch (error) {
+      console.error('Error obteniendo especialidades:', error);
+      this.especialidades.set([]);
+    }
   }
 }

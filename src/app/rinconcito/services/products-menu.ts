@@ -43,7 +43,8 @@ export class ProductsMenu {
                 name: "Bola de Camarón",
                 price: 215
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "TACOS",
@@ -61,7 +62,8 @@ export class ProductsMenu {
                 name: "Mixtos",
                 price: 140
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "TOSTADAS",
@@ -93,7 +95,8 @@ export class ProductsMenu {
                 price: 195,
                 ingredients: "(Cazón, Camarón, Jaiba, Pulpo)"
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "ENSALADAS",
@@ -112,7 +115,8 @@ export class ProductsMenu {
                 name: "Grande",
                 price: 305
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "CAMARONES PARA PELAR",
@@ -130,12 +134,14 @@ export class ProductsMenu {
                 name: "Orden",
                 price: 160
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "ARROZ CON CAMARONES",
             comment: "",
-            price: 120
+            price: 120,
+            image: null
           }
         ]
       },
@@ -235,7 +241,8 @@ export class ProductsMenu {
                 name: "Langostino con Robalo",
                 price: 595
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "CAMARONES",
@@ -291,7 +298,8 @@ export class ProductsMenu {
                 name: "Orden de Cáscara",
                 price: 190
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "PESCADOS",
@@ -378,7 +386,8 @@ export class ProductsMenu {
                 name: "Empapelado",
                 ingredients: "(En Salsa Verde o a la Mexicana)"
               }
-            ]
+            ],
+            image: null
           }
         ]
       },
@@ -387,19 +396,23 @@ export class ProductsMenu {
         products: [
           {
             name: "Torta de Mariscos",
-            price: 175
+            price: 175,
+            image: null
           },
           {
             name: "Torta de Camarón",
-            price: 175
+            price: 175,
+            image: null
           },
           {
             name: "Chile Relleno de Mariscos",
-            price: 175
+            price: 175,
+            image: null
           },
           {
             name: "Chile Relleno de Camarón",
-            price: 175
+            price: 175,
+            image: null
           },
           {
             name: "FILETES",
@@ -446,7 +459,8 @@ export class ProductsMenu {
                 price: 245,
                 ingredients: "(Arroz y Pico de Gallo)"
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "ORDEN JAIBA EN PULPA",
@@ -460,12 +474,14 @@ export class ProductsMenu {
                 name: "Al Mojo de Ajo con Habanero",
                 price: 225
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "REVOLTIJO DE MARISCOS",
             comment: "Camarón Pulpa, Caracol y Pulpo",
-            price: 280
+            price: 280,
+            image: null
           },
           {
             name: "ORDEN DE PULPOS",
@@ -496,7 +512,8 @@ export class ProductsMenu {
                 price: 285
               },
 
-            ]
+            ],
+            image: null
           },
           {
             name: "CARNES",
@@ -525,7 +542,8 @@ export class ProductsMenu {
                 price: 195,
                 ingredients: "(Papas, Arroz, Ensalada)"
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "GUARNICIONES",
@@ -555,7 +573,8 @@ export class ProductsMenu {
                 name: "Orden de Totopos",
                 price: 20
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "PARA NIÑOS",
@@ -571,7 +590,8 @@ export class ProductsMenu {
                 price: 175,
                 ingredients: "(Papas)"
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "ARROZ",
@@ -585,7 +605,8 @@ export class ProductsMenu {
                 name: "Con Plátanos Fritos",
                 price: 60
               }
-            ]
+            ],
+            image: null
           }
         ]
       },
@@ -604,7 +625,8 @@ export class ProductsMenu {
                 name: "Jarra (1.800 l.)",
                 price: 110
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "PREPARADOS MINERALES",
@@ -623,7 +645,8 @@ export class ProductsMenu {
                 name: "Jarra Limón Mineral (1.800 l)",
                 price: 175
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "REFRESCOS",
@@ -657,7 +680,8 @@ export class ProductsMenu {
                 name: "Jugo del Valle",
                 price: 45
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "CAFÉ / TÉ",
@@ -683,7 +707,8 @@ export class ProductsMenu {
                 name: "Té (Sabores)",
                 price: 35
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "CERVEZAS",
@@ -709,7 +734,8 @@ export class ProductsMenu {
                 name: "Modelo Especial",
                 price: 60
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "TARROS PREPARADOS",
@@ -732,7 +758,8 @@ export class ProductsMenu {
                 name: "Chelato",
                 price: 35
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "TORITOS",
@@ -751,7 +778,8 @@ export class ProductsMenu {
                   }
                 ]
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "MEZCAL",
@@ -786,7 +814,8 @@ export class ProductsMenu {
                 price: 160,
                 ingredients: "(Espadín)"
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "DIGESTIVOS",
@@ -821,7 +850,8 @@ export class ProductsMenu {
                 price: 145,
                 ingredients: "(3 oz)"
               },
-            ]
+            ],
+            image: null
           },
           {
             name: "TEQUILAS",
@@ -883,7 +913,8 @@ export class ProductsMenu {
                 name: "En Bandera",
                 price: 40
               },
-            ]
+            ],
+            image: null
           },
           {
             name: "VODKA",
@@ -901,7 +932,8 @@ export class ProductsMenu {
                 name: "Wyborowa",
                 price: 120
               }
-            ]
+            ],
+            image: null
           },
           {
             name: "WHISKY",
@@ -931,7 +963,8 @@ export class ProductsMenu {
                 name: "Glenfiddich",
                 price: 250
               },
-            ]
+            ],
+            image: null
           },
           {
             name: "RON",
@@ -961,7 +994,8 @@ export class ProductsMenu {
                 name: "Appleton State",
                 price: 120
               },
-            ]
+            ],
+            image: null
           },
           {
             name: "BRANDY",
@@ -987,7 +1021,8 @@ export class ProductsMenu {
                 name: "Torres 20",
                 price: 270
               },
-            ]
+            ],
+            image: null
           }
         ]
       }
@@ -995,5 +1030,14 @@ export class ProductsMenu {
 
     getCategories() {
       return this.Menu
+    }
+    getEspecialidades(){
+      for(const categoria of  this.Menu){
+        if (categoria.name.toLowerCase() == "lo imperdible"){
+          console.log(`Muestro los productos:`, categoria)
+          return categoria;
+        }
+      }
+      return null;
     }
 }

@@ -1,0 +1,16 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-cabecera',
+  imports: [
+    CommonModule
+  ],
+  templateUrl: './cabecera.html',
+  styleUrl: './cabecera.css'
+})
+export class Cabecera {
+  imgCabecera : string = "/elRinconcito/logosIconos/oceano.jpg"
+  logotipo : string = "/elRinconcito/logosIconos/logotipoColor.png"
+  urlFacebook : string ="https://www.facebook.com/ElRinconcitoYanga"
+}

@@ -1,17 +1,12 @@
+<app-cabecera></app-cabecera>
+
 <div class="min-h-screen bg-gray-100 p-4">
-  <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-8 mt-4">Nuestro Menú Delicioso</h1>
-
-  <!-- Componente del carrusel -->
-  <app-carousel [slides]="carouselSlides"></app-carousel>
-
+  <app-carousel [especialidades]="especialidades"></app-carousel>
   <h2 class="text-3xl font-bold text-center text-gray-800 my-8">Explora Nuestras Categorías</h2>
+  <!-- <app-menu-categories (categorySelected)="onCategorySelected($event)"></app-menu-categories> -->
 
-  <!-- Componente de botones de categorías -->
-  <app-menu-categories (categorySelected)="onCategorySelected($event)"></app-menu-categories>
-
-  <div *ngIf="currentSelectedCategory" class="text-center mt-8 p-4 bg-white rounded-lg shadow-inner">
+  <!-- <div *ngIf="currentSelectedCategory" class="text-center mt-8 p-4 bg-white rounded-lg shadow-inner">
     <p class="text-xl text-gray-700">Has seleccionado: <span class="font-bold text-lime-600">{{ currentSelectedCategory }}</span></p>
-    <!-- Aquí iría la lista de ítems del menú filtrados por currentSelectedCategory -->
-  </div>
+  </div> -->
 
 </div>
