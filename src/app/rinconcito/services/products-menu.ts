@@ -402,7 +402,7 @@ export class ProductsMenu {
           {
             name: "Torta de Camarón",
             price: 175,
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
             name: "Chile Relleno de Mariscos",

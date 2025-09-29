@@ -12,7 +12,7 @@
           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 h-full">
             
             <!-- Header de la categoría -->
-            <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+            <div class="bg-gradient-to-r from-yellow-700 to-orange-500 p-6 text-white">
               <h2 class="text-2xl font-bold text-center">{{ categoria.name }}</h2>
               @if (categoria.comment) {
                 <p class="text-center text-blue-100 mt-2 text-sm">{{ categoria.comment }}</p>
@@ -35,7 +35,7 @@
                           @if (producto.image) {
                             <button 
                               (click)="openImagePreview(producto.image, producto.name)"
-                              class="flex items-center gap-1 px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-lg transition-colors duration-200"
+                              class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200"
                               title="Ver imagen del producto">
                               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -67,7 +67,7 @@
                         }
                       </div>
                       @if (producto.price) {
-                        <span class="text-lg font-bold text-blue-600 ml-4 whitespace-nowrap">
+                        <span class="text-lg font-bold text-orange-500 ml-4 whitespace-nowrap">
                           ${{ producto.price }}
                         </span>
                       }
@@ -149,7 +149,7 @@
                             }
                           </div>
                           @if (presentacion.price) {
-                            <span class="font-semibold text-blue-600 ml-4 whitespace-nowrap">
+                            <span class="font-semibold text-orange-500 ml-4 whitespace-nowrap">
                               ${{ presentacion.price }}
                             </span>
                           }
@@ -248,36 +248,6 @@
         <div class="p-4 bg-gray-900 border-t border-gray-700">
           <h3 class="text-lg font-semibold text-white text-center">{{ currentImageTitle }}</h3>
         </div>
-      </div>
-      
-      <!-- Contador de imágenes -->
-      @if (hasMultipleImages()) {
-        <div class="text-white text-center mt-4">
-          {{ currentImageIndex + 1 }} / {{ allImages.length }}
-        </div>
-      }
-      
-      <!-- Botones de navegación entre imágenes -->
-      <div class="flex justify-center mt-4 space-x-4">
-        <button 
-          (click)="previousImage()"
-          class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 font-medium"
-          [class.invisible]="!hasMultipleImages()">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-          </svg>
-          Anterior
-        </button>
-        
-        <button 
-          (click)="nextImage()"
-          class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 font-medium"
-          [class.invisible]="!hasMultipleImages()">
-          Siguiente
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </button>
       </div>
     </div>
   </div>
