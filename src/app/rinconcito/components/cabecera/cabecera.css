@@ -13,3 +13,19 @@
 .parallax-mobile {
   background-attachment: scroll;
 }
+.translate-z-0 {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Parallax effect para todos los dispositivos */
+.contenedorCabecera {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.contenedorCabecera > div:first-child {
+  transform: translateZ(-1px) scale(2);
+}
