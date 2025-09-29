@@ -1,11 +1,10 @@
 <div class="relative contenedorCabecera flex justify-center items-center min-h-screen overflow-hidden">
-    <!-- Capa parallax con transform -->
     <div 
-        class="absolute inset-0 bg-cover bg-center transform translate-z-0"
+        class="fixed overflow-hidden inset-0 bg-cover bg-center transform translate-z-0"
         [style.background-image]="'url(' + imgCabecera + ')'"
     ></div>
     
-    <div class="relative flex flex-col h-full justify-center items-center pb-5 z-10">
+    <div class="relative flex flex-col justify-center items-center pb-5 z-10 h-screen">
         <img [src]="logotipo" alt="logotipo" class="2xl:w-[48rem]">
         <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
             <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
