@@ -1,112 +1,177 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, Input, Signal } from '@angular/core';
-import { Category } from '../../models/category.model';
+import { Component, Input, Signal, HostListener } from '@angular/core';
 
-interface Card {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  badge?: string;
-  price?: string | number;
+interface Product {
+  name: string;
+  price?: number;
+  image?: string | null;
   comment?: string;
+  presentations?: Presentation[];
+}
+
+interface Presentation {
+  name: string;
+  price?: number;
+  ingredients?: string;
+  image?: string | null;
+}
+
+interface Category {
+  name: string;
+  comment?: string;
+  products: Product[];
 }
 
 @Component({
   selector: 'app-carousel',
   imports: [CommonModule],
-  templateUrl: './carousel.html',
-  styleUrl: './carousel.css'
+  templateUrl: './carousel.html'
 })
 export class Carousel {
   @Input() especialidades!: Signal<Category[]>;
-  logotipo : string = "/elRinconcito/logosIconos/logotipoColor.png"
-  tituloarrusel: string = "todas nuestras especialidades";
-  currentIndex = 0;
+  currentSlide = 0;
   
-  cards = computed(() => {
-    const categories = this.especialidades();
-    let cardId = 0;
-    const cards: Card[] = [];
+  // Variables para el modal de imagen
+  showImagePreview = false;
+  currentImage: string = '';
+  currentImageTitle: string = '';
+  allImages: { src: string; title: string }[] = [];
+  currentImageIndex = 0;
+  imageLoaded = false;
 
-    categories.forEach(categoria => {
+  @HostListener('document:keydown.escape')
+  onEscapePressed() {
+    this.closeImagePreview();
+  }
+
+  @HostListener('document:keydown.arrowleft')
+  onArrowLeftPressed() {
+    if (this.showImagePreview && this.hasMultipleImages()) {
+      this.previousImage();
+    }
+  }
+
+  @HostListener('document:keydown.arrowright')
+  onArrowRightPressed() {
+    if (this.showImagePreview && this.hasMultipleImages()) {
+      this.nextImage();
+    }
+  }
+
+  nextSlide() {
+    if (this.especialidades().length <= 1) return;
+    this.currentSlide = (this.currentSlide + 1) % this.especialidades().length;
+  }
+
+  previousSlide() {
+    if (this.especialidades().length <= 1) return;
+    this.currentSlide = this.currentSlide === 0 
+      ? this.especialidades().length - 1 
+      : this.currentSlide - 1;
+  }
+
+  goToSlide(index: number) {
+    if (this.especialidades().length <= 1) return;
+    this.currentSlide = index;
+  }
+
+  getTotalProducts(categoria: Category): number {
+    let total = 0;
+    for (const producto of categoria.products) {
+      if (producto.presentations && producto.presentations.length > 0) {
+        total += producto.presentations.length;
+      } else {
+        total += 1;
+      }
+    }
+    return total;
+  }
+
+  // Método para abrir la previsualización de imagen
+  openImagePreview(imageSrc: string, title: string) {
+    this.collectAllImages();
+    
+    // Encontrar el índice de la imagen actual
+    this.currentImageIndex = this.allImages.findIndex(img => img.src === imageSrc);
+    if (this.currentImageIndex === -1) {
+      this.currentImageIndex = 0;
+    }
+    
+    this.currentImage = imageSrc;
+    this.currentImageTitle = title;
+    this.imageLoaded = false;
+    this.showImagePreview = true;
+  }
+
+  // Cerrar el modal
+  closeImagePreview() {
+    this.showImagePreview = false;
+    this.currentImage = '';
+    this.currentImageTitle = '';
+    this.allImages = [];
+    this.currentImageIndex = 0;
+  }
+
+  // Navegar a la imagen anterior
+  previousImage() {
+    if (this.allImages.length > 0) {
+      this.currentImageIndex = this.currentImageIndex > 0 
+        ? this.currentImageIndex - 1 
+        : this.allImages.length - 1;
+      
+      this.currentImage = this.allImages[this.currentImageIndex].src;
+      this.currentImageTitle = this.allImages[this.currentImageIndex].title;
+      this.imageLoaded = false;
+    }
+  }
+
+  // Navegar a la siguiente imagen
+  nextImage() {
+    if (this.allImages.length > 0) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.allImages.length;
+      this.currentImage = this.allImages[this.currentImageIndex].src;
+      this.currentImageTitle = this.allImages[this.currentImageIndex].title;
+      this.imageLoaded = false;
+    }
+  }
+
+  // Verificar si hay múltiples imágenes
+  hasMultipleImages(): boolean {
+    return this.allImages.length > 1;
+  }
+
+  // Manejar error de carga de imagen
+  handleImageError() {
+    // Cerrar el modal si la imagen no carga
+    this.closeImagePreview();
+  }
+
+  // Recopilar todas las imágenes de los productos que SI tienen imagen
+  private collectAllImages() {
+    this.allImages = [];
+    
+    this.especialidades().forEach(categoria => {
       categoria.products.forEach(producto => {
-        cards.push({
-          id: cardId++,
-          title: producto.name,
-          description: this.generateDescription(producto),
-          image: producto.image || '/elRinconcito/logosIconos/logotipoColor.png',
-          badge: categoria.name,
-          price: producto.price,
-          comment: producto.comment
-        });
+        // Solo agregar productos que tengan imagen
+        if (producto.image) {
+          this.allImages.push({
+            src: producto.image,
+            title: producto.name
+          });
+        }
+        
+        // Agregar presentaciones que tengan imagen
+        if (producto.presentations) {
+          producto.presentations.forEach(presentacion => {
+            if (presentacion.image) {
+              this.allImages.push({
+                src: presentacion.image,
+                title: `${producto.name} - ${presentacion.name}`
+              });
+            }
+          });
+        }
       });
     });
-
-    return cards;
-  });
-
-  // ✅ CORREGIDO: Usar computed para mejor performance
-  visibleCards = computed(() => {
-    const cardsArray = this.cards();
-    return cardsArray.slice(this.currentIndex, this.currentIndex + this.cardsPerView);
-  });
-
-  get cardsPerView(): number {
-    if (typeof window === 'undefined') return 3;
-    
-    const width = window.innerWidth;
-    if (width < 640) return 1;
-    if (width < 768) return 2;
-    if (width < 1024) return 3;
-    if (width < 1280) return 4;
-    return 5;
-  }
-
-  next(): void {
-    const cardsArray = this.cards(); // ✅ CORREGIDO
-    if (this.currentIndex < cardsArray.length - this.cardsPerView) {
-      this.currentIndex++;
-    }
-  }
-
-  prev(): void {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    }
-  }
-
-  goTo(index: number): void {
-    const cardsArray = this.cards(); // ✅ CORREGIDO
-    if (index >= 0 && index <= cardsArray.length - this.cardsPerView) {
-      this.currentIndex = index;
-    }
-  }
-
-  // ✅ CORREGIDO: Usar computed para totalSlides
-  totalSlides = computed(() => {
-    const cardsArray = this.cards();
-    return Math.max(0, cardsArray.length - this.cardsPerView + 1);
-  });
-
-  private generateDescription(producto: any): string {
-    let description = '';
-    
-    if (producto.comment) {
-      description += producto.comment + ' ';
-    }
-    
-    if (producto.presentations && producto.presentations.length > 0) {
-      description += `Presentaciones: ${producto.presentations.map((p: any) => p.name).join(', ')}. `;
-    }
-    
-    if (producto.sizes && producto.sizes.length > 0) {
-      const prices = producto.sizes.map((size: any) => `${size.name}: $${size.price}`);
-      description += `Precios: ${prices.join(', ')}.`;
-    } else if (producto.price) {
-      description += `Precio: $${producto.price}.`;
-    }
-    
-    return description.trim() || 'Deliciosa especialidad de la casa';
   }
 }

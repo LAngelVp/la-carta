@@ -397,7 +397,7 @@ export class ProductsMenu {
           {
             name: "Torta de Mariscos",
             price: 175,
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
             name: "Torta de Camarón",
