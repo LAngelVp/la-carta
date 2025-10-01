@@ -392,225 +392,155 @@ export class ProductsMenu {
         ]
       },
       {
-        name: "Lo Imperdible",
+        name: "La especialidad",
         products: [
           {
-            name: "Torta de Mariscos",
-            price: 175,
+            name: "Langostino en chilpachole",
+            presentations: [
+              {
+                name: "1 kg",
+                price: 1485
+              },
+              {
+                name: "1/2 kg",
+                price: 775
+              },
+              {
+                name: "1 orden",
+                price: 450
+              },
+            ],
             image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "Torta de Camarón",
-            price: 175,
+            name: "Langostino al mojo de ajo",
+            presentations: [
+              {
+                name: "1 kg",
+                price: 1485
+              },
+              {
+                name: "1/2 kg",
+                price: 775
+              },
+              {
+                name: "1 orden",
+                price: 450
+              },
+            ],
             image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "Chile Relleno de Mariscos",
-            price: 175,
-            image: null
-          },
-          {
-            name: "Chile Relleno de Camarón",
-            price: 175,
-            image: null
-          },
-          {
-            name: "FILETES",
-            comment: "Acompañados con Ensalada y Arroz",
+            name: "Langostino enchipotlados",
             presentations: [
               {
-                name: "Empanizado",
-                price: 230,
-                ingredients: "(Ensalada, Arroz y Papas)"
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "A la Plancha",
-                price: 210,
-                ingredients: "(Verduras, Arroz, Ensalada)"
+                name: "1/2 kg",
+                price: 775
               },
               {
-                name: "A la Diabla",
-                price: 210
+                name: "1 orden",
+                price: 450
               },
-              {
-                name: "Enchipotlado",
-                price: 210
-              },
-              {
-                name: "A la Veracruzana",
-                price: 210
-              },
-              {
-                name: "Al Mojo de Ajo",
-                price: 210
-              },
-              {
-                name: "A la Chilpaya",
-                price: 210
-              },
-              {
-                name: "Relleno de Mariscos",
-                price: 245,
-                ingredients: "(Camarón, Pulpo y Jaiba)"
-              }
-              ,
-              {
-                name: "Relleno de Camarón",
-                price: 245,
-                ingredients: "(Arroz y Pico de Gallo)"
-              }
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "ORDEN JAIBA EN PULPA",
-            comment: "",
+            name: "Langostino a la mantequilla",
             presentations: [
               {
-                name: "Chilpaya",
-                price: 225
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "Al Mojo de Ajo con Habanero",
-                price: 225
-              }
+                name: "1/2 kg",
+                price: 775
+              },
+              {
+                name: "1 orden",
+                price: 450
+              },
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "REVOLTIJO DE MARISCOS",
-            comment: "Camarón Pulpa, Caracol y Pulpo",
-            price: 280,
-            image: null
-          },
-          {
-            name: "ORDEN DE PULPOS",
-            comment: "",
+            name: "Langostino a la diabla",
             presentations: [
               {
-                name: "Al Mojo de Ajo",
-                price: 285
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "Enchipotlados",
-                price: 285
+                name: "1/2 kg",
+                price: 775
               },
               {
-                name: "A la Mantequilla",
-                price: 285
+                name: "1 orden",
+                price: 450
               },
-              {
-                name: "A la Chilpaya",
-                price: 285
-              },
-              {
-                name: "A la Diabla",
-                price: 285
-              },
-              {
-                name: "Encebollados",
-                price: 285
-              },
-
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "CARNES",
-            comment: "",
+            name: "Langostino en salsa verde",
             presentations: [
               {
-                name: "Bistec Asado",
-                price: 165,
-                ingredients: "(Ensalada, Arroz y Frijoles)"
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "Arrachera",
-                price: 290,
-                ingredients: "(Pico de Gallo, Arroz, Frijoles y Papas)"
-              },{
-                name: "Tampiqueña",
-                price: 230,
-                ingredients: "(Ensalada, Arroz, Plátano Fritos, Frijoles, Papas, 2 Enchiladas)"
-              }
-              ,{
-                name: "Tampiqueña con Arrachera",
-                price: 310
+                name: "1/2 kg",
+                price: 775
               },
               {
-                name: "Milanesa Pollo",
-                price: 195,
-                ingredients: "(Papas, Arroz, Ensalada)"
-              }
+                name: "1 orden",
+                price: 450
+              },
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "GUARNICIONES",
-            comment: "No se hacen cambios en las guarniciones",
+            name: "Langostino a la chilpaya",
             presentations: [
               {
-                name: "Orden de Papas a la Francesa",
-                price: 75
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "Porción de Papas a la Francesa",
-                price: 40
+                name: "1/2 kg",
+                price: 775
               },
               {
-                name: "Orden de Frijoles",
-                price: 45
+                name: "1 orden",
+                price: 450
               },
-              {
-                name: "Orden de Pico de Gallo",
-                price: 30
-              },
-              {
-                name: "Orden de Guacamoles",
-                price: 75
-              },
-              {
-                name: "Orden de Totopos",
-                price: 20
-              }
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
           {
-            name: "PARA NIÑOS",
-            comment: "",
+            name: "Langostino al mojo de ajo con habanero",
             presentations: [
               {
-                name: "Nuggets de Pollo",
-                price: 150,
-                ingredients: "(Papas)"
+                name: "1 kg",
+                price: 1485
               },
               {
-                name: "Hamburguesa",
-                price: 175,
-                ingredients: "(Papas)"
-              }
+                name: "1/2 kg",
+                price: 775
+              },
+              {
+                name: "1 orden",
+                price: 450
+              },
             ],
-            image: null
+            image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
           },
-          {
-            name: "ARROZ",
-            comment: "",
-            presentations: [
-              {
-                name: "Natural",
-                price: 30
-              },
-               {
-                name: "Con Plátanos Fritos",
-                price: 60
-              }
-            ],
-            image: null
-          }
         ]
       },
-      {
+      { 
         name: "Bebidas",
         products: [
           {
@@ -1033,7 +963,7 @@ export class ProductsMenu {
     }
     getEspecialidades(){
       for(const categoria of  this.Menu){
-        if (categoria.name.toLowerCase() == "lo imperdible"){
+        if (categoria.name.toLowerCase() == "la especialidad"){
           console.log(`Muestro los productos:`, categoria)
           return categoria;
         }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Signal, HostListener } from '@angular/core';
+import { Component, Input, Signal, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { AosService } from '../../../serviciosGlobales/aos-service';
 
 interface Product {
   name: string;
@@ -27,7 +28,7 @@ interface Category {
   imports: [CommonModule],
   templateUrl: './carousel.html'
 })
-export class Carousel {
+export class Carousel implements OnInit{
   @Input() especialidades!: Signal<Category[]>;
   currentSlide = 0;
   
@@ -38,6 +39,23 @@ export class Carousel {
   allImages: { src: string; title: string }[] = [];
   currentImageIndex = 0;
   imageLoaded = false;
+  imagen_platillo: string = "/elRinconcito/logosIconos/oceano.jpg";
+
+  
+  constructor(
+    private aosService: AosService,
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
+
+  
+  async ngOnInit(): Promise<void> {
+      await this.aosService.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 50
+    });
+  }
 
   @HostListener('document:keydown.escape')
   onEscapePressed() {

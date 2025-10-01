@@ -1,10 +1,11 @@
-import { Component, inject, signal, Signal } from '@angular/core';
+import { Component, inject, OnInit, signal, Signal } from '@angular/core';
 import { Carousel } from '../../components/carousel/carousel';
 import { CommonModule } from '@angular/common';
 import { Cabecera } from "../../components/cabecera/cabecera";
 import { ProductsMenu } from '../../services/products-menu';
 import { Category } from '../../models/category.model';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { AosService } from '../../../serviciosGlobales/aos-service';
 
 interface CarouselItem {
   imageSrc: string;
@@ -29,7 +30,7 @@ export class HomeRinconcito {
   constructor() {
     this.obtenerEspecialidadesServicio();
   }
-
+  
   obtenerEspecialidadesServicio() {
     try {
       const data = this.productosServicio.getEspecialidades();
