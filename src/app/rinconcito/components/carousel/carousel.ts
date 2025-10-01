@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Signal, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Input, Signal, HostListener, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { AosService } from '../../../serviciosGlobales/aos-service';
 
 interface Product {
@@ -28,7 +28,7 @@ interface Category {
   imports: [CommonModule],
   templateUrl: './carousel.html'
 })
-export class Carousel implements OnInit{
+export class Carousel implements AfterViewInit{
   @Input() especialidades!: Signal<Category[]>;
   currentSlide = 0;
   
@@ -48,7 +48,7 @@ export class Carousel implements OnInit{
   ) {}
 
   
-  async ngOnInit(): Promise<void> {
+  async ngAfterViewInit(): Promise<void> {
       await this.aosService.init({
       duration: 1000,
       easing: 'ease-in-out',
