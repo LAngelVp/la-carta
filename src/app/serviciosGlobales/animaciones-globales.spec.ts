@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AosService } from './aos-service';
+import { AnimacionesGlobales } from './animaciones-globales';
 
-describe('AosService', () => {
-  let service: AosService;
+describe('AnimacionesGlobales', () => {
+  let service: AnimacionesGlobales;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AosService);
+    service = TestBed.inject(AnimacionesGlobales);
   });
 
   it('should be created', () => {

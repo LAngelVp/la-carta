@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import 'aos/dist/aos.css';
-import * as AOS from 'aos';
-import { AosService } from '../../../serviciosGlobales/aos-service';
 
 @Component({
   selector: 'app-cabecera',

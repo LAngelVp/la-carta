@@ -98,3 +98,48 @@
 .btn_ver_mas:focus {
     background: #23448a;
 }
+
+
+/*  animaciones */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Diferentes efectos */
+.animate-fade-up { transform: translateY(50px); }
+.animate-fade-down { transform: translateY(-50px); }
+.animate-fade-left { transform: translateX(50px); }
+.animate-fade-right { transform: translateX(-50px); }
+.animate-zoom { transform: scale(0.8); }
+
+.animate-fade-up.animated { transform: translateY(0); }
+.animate-fade-down.animated { transform: translateY(0); }
+.animate-fade-left.animated { transform: translateX(0); }
+.animate-fade-right.animated { transform: translateX(0); }
+.animate-zoom.animated { transform: scale(1); }
+
+/* Delays escalonados */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Para el carrusel */
+.carousel-item {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Reduce motion para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Signal, HostListener, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
-import { AosService } from '../../../serviciosGlobales/aos-service';
+import { AnimacionesGlobales } from '../../../serviciosGlobales/animaciones-globales';
 
 interface Product {
   name: string;
@@ -43,18 +43,21 @@ export class Carousel implements AfterViewInit{
 
   
   constructor(
-    private aosService: AosService,
+    private animacionesNativas: AnimacionesGlobales,
     @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
-  
-  async ngAfterViewInit(): Promise<void> {
-      await this.aosService.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 50
+  ngAfterViewInit(): void {
+    this.animacionesNativas.initScrollAnimations({
+      threshold: 0.1,
+      rootMargin: '0px',
+      once: true
     });
+
+    // Animación inicial para elementos visibles
+    setTimeout(() => {
+      this.animacionesNativas.refresh();
+    }, 100);
   }
 
   @HostListener('document:keydown.escape')

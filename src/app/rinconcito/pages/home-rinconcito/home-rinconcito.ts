@@ -5,7 +5,6 @@ import { Cabecera } from "../../components/cabecera/cabecera";
 import { ProductsMenu } from '../../services/products-menu';
 import { Category } from '../../models/category.model';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { AosService } from '../../../serviciosGlobales/aos-service';
 
 interface CarouselItem {
   imageSrc: string;
