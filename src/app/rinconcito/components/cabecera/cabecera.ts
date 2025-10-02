@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './cabecera.css'
 })
 export class Cabecera {
-  imgCabecera : string = "/elRinconcito/logosIconos/oceano.jpg"
+  imgCabecera : string = "/elRinconcito/logosIconos/portada.jpg"
   logotipo : string = "/elRinconcito/logosIconos/logotipoColor.png"
   urlFacebook : string ="https://www.facebook.com/ElRinconcitoYanga"
 

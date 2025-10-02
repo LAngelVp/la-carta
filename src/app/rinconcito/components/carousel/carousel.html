@@ -1,8 +1,8 @@
-<div class="grid grid-cols-2 gap-2">
+<div class="flex flex-col  md:grid grid-cols-2 gap-2 ">
   <div class="col">
     <img [src]="imagen_platillo" alt="" class="relative cover w-full h-full overflow-hidden animate-on-scroll animate-fade-up">
   </div>
-  <div class="col relative w-full max-w-6xl mx-auto">
+  <div class="col relative w-full max-w-6xl mx-auto animate-on-scroll animate-fade-up">
     <!-- Contenedor principal -->
     <div class="relative overflow-hidden">
       <!-- Transición del carrusel -->
@@ -11,12 +11,12 @@
         
         <!-- Iterar sobre las categorías -->
         @for (categoria of especialidades(); track categoria.name; let i = $index) {
-          <div class="w-full flex-shrink-0 px-4">
+          <div class="w-full flex-shrink-0 px-4 py-5">
             <!-- Card de categoría -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 h-full">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 h-full">
               
               <!-- Header de la categoría -->
-              <div class="bg-gradient-to-r from-yellow-700 to-orange-500 p-6 text-white">
+              <div class="bg-gradient-to-r from-yellow-700 to-orange-600 py-2 text-white">
                 <h2 class="text-2xl font-bold text-center">{{ categoria.name | uppercase}}</h2>
                 @if (categoria.comment) {
                   <p class="text-center text-blue-100 mt-2 text-sm">{{ categoria.comment }}</p>

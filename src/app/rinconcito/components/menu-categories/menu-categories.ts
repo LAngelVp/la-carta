@@ -1,36 +1,43 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output, PLATFORM_ID } from '@angular/core';
 import { Category } from '../../models/category.model';
 import { CommonModule } from '@angular/common';
-import { ProductsMenu } from '../../services/products-menu';
+import { AnimacionesGlobales } from '../../../serviciosGlobales/animaciones-globales';
+import { ProductosCards } from "../productos-cards/productos-cards";
 
 @Component({
   selector: 'app-menu-categories',
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    ProductosCards
+],
   templateUrl: './menu-categories.html',
   styleUrl: './menu-categories.css'
 })
 export class MenuCategories {
-  categories: Category[] = [];
-  selectedCategory: string | null = null; // Para mantener un seguimiento de la categoría seleccionada
+  @Input() categorias: Category[] = [];
+  @Input() titulo: string = 'Categorías';
+  
+  categoriaSeleccionada: Category | null = null;
 
-  @Output() categorySelected = new EventEmitter<string>(); // Emite el nombre de la categoría seleccionada
+  constructor(
+    private animacionesNativas: AnimacionesGlobales,
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
 
-  constructor(private menuService: ProductsMenu) { }
+  ngAfterViewInit(): void {
+    this.animacionesNativas.initScrollAnimations({
+      threshold: 0.1,
+      rootMargin: '0px',
+      once: true
+    });
 
-  ngOnInit(): void {
-    this.categories = this.menuService.getCategories();
-    // Opcional: Seleccionar la primera categoría por defecto al cargar
-    if (this.categories.length > 0) {
-      this.selectCategory(this.categories[0].name);
-    }
+    // Animación inicial para elementos visibles
+    setTimeout(() => {
+      this.animacionesNativas.refresh();
+    }, 100);
   }
 
-  selectCategory(categoryName: string): void {
-    this.selectedCategory = categoryName;
-    this.categorySelected.emit(categoryName); // Emitir la categoría seleccionada
-    console.log(`Categoría seleccionada: ${categoryName}`);
-    // Aquí podrías cargar los ítems del menú correspondientes a esta categoría
+  onCategoriaClick(categoria: Category ) {
+    this.categoriaSeleccionada = categoria;
   }
 }

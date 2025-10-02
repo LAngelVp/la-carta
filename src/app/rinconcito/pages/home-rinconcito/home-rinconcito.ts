@@ -5,6 +5,7 @@ import { Cabecera } from "../../components/cabecera/cabecera";
 import { ProductsMenu } from '../../services/products-menu';
 import { Category } from '../../models/category.model';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { MenuCategories } from "../../components/menu-categories/menu-categories";
 
 interface CarouselItem {
   imageSrc: string;
@@ -15,20 +16,39 @@ interface CarouselItem {
   imports: [
     Carousel,
     CommonModule,
-    Cabecera
+    Cabecera,
+    MenuCategories
 ],
   templateUrl: './home-rinconcito.html',
   styleUrl: './home-rinconcito.css'
 })
 export class HomeRinconcito {
   title = 'my-carousel-app';
-  tituloEspecialidades : string = "especialidades del menú";
+  tituloEspecialidades : string = "Menú del rinconcito";
   private productosServicio = inject(ProductsMenu);
   especialidades = signal<Category[]>([]);
+  categorias = signal<Category[]>([]);
 
   constructor() {
     this.obtenerEspecialidadesServicio();
+    this.obtenerProductosCategorias();
   }
+
+  async obtenerProductosCategorias() {
+    try {
+        const categorias = this.productosServicio.getCategories();
+        
+        if (categorias && Array.isArray(categorias)) {
+          this.categorias.set(categorias);
+          console.log('Categorías obtenidas:', this.categorias());
+        } else {
+          console.log("No se encontraron categorías");
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al obtener las categorías');
+      }
+    }
   
   obtenerEspecialidadesServicio() {
     try {

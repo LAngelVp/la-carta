@@ -39,7 +39,7 @@ export class Carousel implements AfterViewInit{
   allImages: { src: string; title: string }[] = [];
   currentImageIndex = 0;
   imageLoaded = false;
-  imagen_platillo: string = "/elRinconcito/logosIconos/oceano.jpg";
+  imagen_platillo: string = "/elRinconcito/logosIconos/logoFondoBlanco.jpg";
 
   
   constructor(
