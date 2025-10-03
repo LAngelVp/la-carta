@@ -38,7 +38,7 @@
                             <!-- Botón para previsualizar imagen - SOLO SI TIENE IMAGEN -->
                             @if (producto.image) {
                               <button 
-                                (click)="openImagePreview(producto.image, producto.name)"
+                                (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
                                 class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200"
                                 title="Ver imagen del producto">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@
                         <!-- Botón para previsualizar imagen del producto principal -->
                         @if (producto.image) {
                           <button 
-                            (click)="openImagePreview(producto.image, producto.name)"
+                            (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
                             class="flex items-center gap-1 px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-lg transition-colors duration-200"
                             title="Ver imagen del producto">
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@
                                 <!-- Botón para presentaciones (solo si tiene imagen) -->
                                 @if (presentacion.image) {
                                   <button 
-                                    (click)="openImagePreview(presentacion.image, presentacion.name)"
+                                    (click)="openImagePreview(presentacion.image, presentacion.name || 'Producto sin nombre')"
                                     class="flex items-center gap-1 px-2 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-lg transition-colors duration-200"
                                     title="Ver imagen de esta presentación">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
