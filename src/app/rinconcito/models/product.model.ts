@@ -7,7 +7,7 @@ export interface Product {
   ingredients?: string;
   sizes?: Size[]
   presentations?: Presentation[]
+  grammage?: string; 
   price?: number;
-  image: string | null;
-
+  image?: string | null;
 }

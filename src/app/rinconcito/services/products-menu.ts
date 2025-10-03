@@ -146,6 +146,50 @@ export class ProductsMenu {
         ]
       },
       {
+        name: "Recomendaciones",
+        products: [
+          {
+            name: "Langostinos al mojo de ajo",
+            comment: "Orden",
+            price: 450
+          },
+          {
+            name: "Langostinos enchipotlados",
+            comment: "Orden",
+            price: 450
+          },
+          {
+            name: "Agua chile de camarón",
+            comment: "Orden",
+            price: 310
+          },
+          {
+            name: "Chilpachole de robalo con langostinos",
+            price: 595
+          },
+          {
+            name: "Mojarra al chile limón",
+            comment: "Costo en base al tamaño (solicitar)",
+          },
+          {
+            name: "Fetuccini con camarones",
+            price: 260
+          },
+          {
+            name: "Hamburguesa de camarón",
+            price: 230
+          },
+          {
+            name: "Queso fundido con camarones",
+            price: 290
+          },
+          {
+            name: "Torre de mariscos",
+            price: 410
+          },
+        ]
+      },
+      {
         name: "Chilpacholes",
         products: [
           {
@@ -243,152 +287,166 @@ export class ProductsMenu {
               }
             ],
             image: null
-          },
-          {
-            name: "CAMARONES",
-            comment: "Acompañados de Ensalada y Arroz",
-            presentations: [
-              {
-                name: "Empanizados",
-                price: 245,
-                ingredients: "(Ensalada, Papas y Arroz)"
-              },
-              {
-                name: "Rellenos de Queso C/Tocino",
-                price: 320,
-                ingredients: "(Ensalada, Papas y Arroz)"
-              },
-              {
-                name: "Al Coco",
-                price: 275,
-                ingredients: "(Salsa de Tamarindo y Arroz)"
-              },
-              {
-                name: "Al Mojo de Ajo"
-              },
-              {
-                name: "A la Mantequilla"
-              },
-              {
-                name: "Al Ajillo"
-              },
-              {
-                name: "Enchipotlados"
-              },
-              {
-                name: "Al Mojo de Ajo con Habanero"
-              },
-              {
-                name: "En Salsa de la Casa (Chipotle y Crema)"
-              },
-              {
-                name: "A la Chilpaya"
-              },
-              {
-                name: "A la Diabla (Pasta de Ajo con Salsa Macha)"
-              },
-              {
-                name: "A la Diabla Gratinados (Chipotle, Queso)"
-              },
-              {
-                name: "Orden en Pulpa",
-                price: 215
-              },
-              {
-                name: "Orden de Cáscara",
-                price: 190
-              }
-            ],
-            image: null
-          },
-          {
-            name: "PESCADOS",
-            comment: "Acompañalos de la sazón de tu preferencia",
-            sizes: [
-              {
-                name: "Mojarra",
-                price: 195,
-                grammage: "Chica (500 - 550 gramos)"
-              },
-              {
-                name: "Mojarra",
-                price: 230,
-                grammage: "Mediana (570 - 650 gramos)"
-              },
-              {
-                name: "Mojarra",
-                price: 290,
-                grammage: "Grande (680 - 750 gramos)"
-              },
-              {
-                name: "Mojarra",
-                price: 320,
-                grammage: "Jumbo (780 - 900 gramos)"
-              },
-              {
-                name: "Rebanadas de Robalo",
-                price: 180,
-                grammage: "Chica (200 - 250 gramos)"
-              },
-              {
-                name: "Rebanadas de Robalo",
-                price: 235,
-                grammage: "Mediana (270 - 320 gramos)"
-              },
-              {
-                name: "Rebanadas de Robalo",
-                price: 290,
-                grammage: "Grande (340 - 400 gramos)"
-              },
-              {
-                name: "Chucumites",
-                price: 320,
-                grammage: "Chico (460 - 550 gramos)"
-              },
-              {
-                name: "Chucumites",
-                price: 370,
-                grammage: "Mediano (580 - 670 gramos)"
-              },
-              {
-                name: "Chucumites",
-                price: 445,
-                grammage: "Grande (700 - 800 gramos)"
-              },
-              {
-                name: "Chucumites",
-                price: 495,
-                grammage: "Jumbo (830 - 950 gramos)"
-              }
-            ],
-            presentations: [
-              {
-                name: "Al Mojo de Ajo",
-                ingredients: "(Ajos fritos o Pasta de Ajo)"
-              },
-              {
-                name: "A la Diabla",
-                ingredients: "(Pasta de Ajo y Salsa Macha)"
-              },
-              {
-                name: "Al Chile limón"
-              },
-              {
-                name: "Chipotle"
-              },
-              {
-                name: "A la Chilpaya"
-              },
-              {
-                name: "A la Veracruzana"
-              },
-              {
-                name: "Empapelado",
-                ingredients: "(En Salsa Verde o a la Mexicana)"
-              }
-            ],
-            image: null
           }
+        ]
+      },
+      {
+        name: "CAMARONES",
+        products: [
+          {
+            name: "Empanizados",
+            price: 245,
+            ingredients: "(Ensalada, Papas y Arroz)"
+          },
+          {
+            name: "Rellenos de Queso C/Tocino",
+            price: 320,
+            ingredients: "(Ensalada, Papas y Arroz)"
+          },
+          {
+            name: "Al Coco",
+            price: 275,
+            ingredients: "(Salsa de Tamarindo y Arroz)"
+          },
+          {
+            name: "Orden en Pulpa",
+            price: 215
+          },
+          {
+            name: "Orden de Cáscara",
+            price: 190
+          }
+        ],
+        preparation: [
+          {
+            name: "Al Mojo de Ajo"
+          },
+          {
+            name: "A la Mantequilla"
+          },
+          {
+            name: "Al Ajillo"
+          },
+          {
+            name: "Enchipotlados"
+          },
+          {
+            name: "Al Mojo de Ajo con Habanero"
+          },
+          {
+            name: "En Salsa de la Casa (Chipotle y Crema)"
+          },
+          {
+            name: "A la Chilpaya"
+          },
+          {
+            name: "A la Diabla (Pasta de Ajo con Salsa Macha)"
+          },
+          {
+            name: "A la Diabla Gratinados (Chipotle, Queso)"
+          }
+        ]
+      },
+      {
+        name: "PESCADOS",
+        comment: "Acompañalos de la sazón de tu preferencia",
+        products: [
+          {
+            name: "Mojarra",
+            presentations: [
+              {
+                name: "Chica",
+                grammage: "(500 - 550 gramos)",
+                price: 195
+              },
+              {
+                name: "Mediana",
+                grammage: "(570 - 650 gramos)",
+                price: 230
+              },
+              {
+                name: "Grande",
+                grammage: "(680 - 750 gramos)",
+                price: 290
+              },
+              {
+                name: "Jumbo",
+                grammage: "(780 - 900 gramos)",
+                price: 320
+              },
+            ],
+          },
+          {
+            name: "Rebanadas de robalo",
+            presentations: [
+              {
+                name: "Chica",
+                grammage: "(200 - 250 gramos)",
+                price: 180
+              },
+              {
+                name: "Mediana",
+                grammage: "(270 - 320 gramos)",
+                price: 235
+              },
+              {
+                name: "Grande",
+                grammage: "(340 - 400 gramos)",
+                price: 290
+              }
+            ],
+          },
+          {
+            name: "Chucumites",
+            presentations: [
+              {
+                name: "Chico",
+                grammage: "(460 - 550 gramos)",
+                price: 320
+              },
+              {
+                name: "Mediano",
+                grammage: "(580 - 670 gramos)",
+                price: 370
+              },
+              {
+                name: "Grande",
+                grammage: "(700 - 800 gramos)",
+                price: 445
+              },
+              {
+                name: "Jumbo",
+                grammage: "(830 - 950 gramos)",
+                price: 495
+              }
+            ],
+          },
+        ],
+        preparation: [
+          {
+            name: "Al mojo de ajo",
+            comments: "ajos fritos o pasta de ajo"
+          },
+          {
+            name: "A la diabla",
+            comments: "pasta de ajo y salsa macha"
+          },
+          {
+            name: "Al chile limón"
+          },
+          {
+            name: "Chipotle"
+          },
+          {
+            name: "A la chilpaya"
+          },
+          {
+            name: "A la veracruzana"
+          },
+          {
+            name: "Empapelado",
+            comments: "En salsa verde o a la mexicana"
+          },
         ]
       },
       {
@@ -537,6 +595,224 @@ export class ProductsMenu {
               },
             ],
             image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+          },
+        ]
+      },
+      {
+        name: "Lo imperdible",
+        products: [
+          {
+            name: "Torta de mariscos",
+            price: 175 
+          },
+          {
+            name: "Torta de camarón",
+            price: 175 
+          },
+          {
+            name: "Chile relleno de mariscos",
+            price: 175 
+          },
+          {
+            name: "Chile relleno de camarón",
+            price: 175 
+          },
+        ]
+      },
+      {
+        name : "Filetes",
+        comment: "Acompañados con ensalada y arroz",
+        products: [
+          {
+            name: "Empanizado",
+            comment: "Ensalada, arroz y papas",
+            price: 230
+          },
+          {
+            name: "A la plancha",
+            comment: "Verduras, arroz y ensalada",
+            price: 210
+          },
+          {
+            name: "A la diabla",
+            price: 210
+          },
+          {
+            name: "Enchipotlado",
+            price: 210
+          },
+          {
+            name: "A la veracruzana",
+            price: 210
+          },
+          {
+            name: "Al mojo de ajo",
+            price: 210
+          },
+          {
+            name: "A la chilpaya",
+            price: 210
+          },
+          {
+            name: "Relleno de mariscos",
+            comment: "Camarón, pulpo y jaiba",
+            price: 245
+          },
+          {
+            name: "Relleno de camarón",
+            comment: "arroz y pico de gallo",
+            price: 245
+          },
+        ]
+      },
+      {
+        name: "Orden de jaiba en pulpa",
+        products: [
+          {
+            name: "Chilpaya",
+            price: 225
+          },
+          {
+            name: "Al mojo de ajo con habanero",
+            price: 225
+          },
+        ]
+      },
+      {
+        name: "Revoltijo de mariscos",
+        products: [
+          {
+            name: "Orden de Revoltijo de mariscos",
+            comment: "Camarón en pulpa, caracol y pulpo",
+            price: 280
+          }
+        ]
+      },
+      {
+        name: "Orden de pulpos",
+        products: [
+          {
+            name: "Orden de pulpos",
+            presentations: [
+              {
+                name: "Al mojo de ajo",
+              },
+              {
+                name: "Enchipotlados"
+              },
+              {
+                name: "A la mantequilla"
+              },
+              {
+                name: "A la chilpaya"
+              },
+              {
+                name: "A la diabla"
+              },
+              {
+                name: "Encebollados"
+              }
+            ],
+            sizes: [
+              {
+                name: "Orden",
+                price: 285
+              }
+            ]
+          },
+        ]
+      },
+      {
+        name: "Carnes",
+        products: [
+          {
+            name: "Bistec asado",
+            comment: "Ensalada, arroz y frijoles",
+            price: 165
+          },
+          {
+            name: "Arrachera",
+            comment: "pico de gallo, arroz, frijoles y papas",
+            price: 290
+          },
+          {
+            name: "Tampiqueña",
+            comment: "Ensalada, arroz, platano frito, frijoles, papas, 2 enchiladas",
+            price: 230
+          },
+          {
+            name: "Tampiqueña con arrachera",
+            price: 310
+          },
+          {
+            name: "Milanesa de pollo",
+            comment: "papas, arroz y ensalada",
+            price: 195
+          },
+          {
+            name: "Milanesa de res",
+            comment: "papas, arroz y ensalada",
+            price: 230
+          },
+        ]
+      },
+      {
+        name: "Guarniciones",
+        comment: "No se hacen cambios en las guarniciones. Todos los platillos son elaborados al momento, en un tiempo aproximado de 25 minutos.",
+        products: [
+          {
+            name : "Orden de papas a la francesa",
+            price: 75
+          },
+          {
+            name : "Porción de papas a la francesa",
+            price: 40
+          },
+          {
+            name : "Orden de frijoles",
+            price: 45
+          },
+          {
+            name : "Orden de pico de gallo",
+            price: 30
+          },
+          {
+            name : "Orden de guacamole",
+            price: 75
+          },
+          {
+            name : "Orden de totopos",
+            price: 20
+          },
+        ]
+      },
+      {
+        name: "Para los niños",
+        products: [
+          {
+            name: "Nuggets de pollo",
+            comment: "Incluye una porción de papas",
+            price: 150
+          },
+          {
+            name: "Hamburguesa",
+            comment: "Incluye una porción de papas",
+            price: 175
+          },
+        ]
+      },
+      {
+        name: "Arroz",
+        products: [
+          {
+            name: "Arroz natural",
+            comment: "Porción",
+            price: 30
+          },
+          {
+            name: "Arroz con platanos fritos",
+            comment: "Porción",
+            price: 60
           },
         ]
       },
