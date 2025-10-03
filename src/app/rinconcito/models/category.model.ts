@@ -8,6 +8,6 @@ export interface Category {
 
 }
 export interface Preparation{
-  name: string;
+  name?: string;
   comments?: string;
 }
