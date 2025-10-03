@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { Cabecera } from "../../components/cabecera/cabecera";
 import { ProductsMenu } from '../../services/products-menu';
 import { Category } from '../../models/category.model';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { MenuCategories } from "../../components/menu-categories/menu-categories";
 
 interface CarouselItem {

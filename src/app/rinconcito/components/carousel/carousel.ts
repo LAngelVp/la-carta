@@ -1,27 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Signal, HostListener, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
+import { Component, Input, Signal, HostListener, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { AnimacionesGlobales } from '../../../serviciosGlobales/animaciones-globales';
-
-interface Product {
-  name: string;
-  price?: number;
-  image?: string | null;
-  comment?: string;
-  presentations?: Presentation[];
-}
-
-interface Presentation {
-  name: string;
-  price?: number;
-  ingredients?: string;
-  image?: string | null;
-}
-
-interface Category {
-  name: string;
-  comment?: string;
-  products: Product[];
-}
+import { Category } from '../../models/category.model';
 
 @Component({
   selector: 'app-carousel',
@@ -177,7 +157,7 @@ export class Carousel implements AfterViewInit{
         if (producto.image) {
           this.allImages.push({
             src: producto.image,
-            title: producto.name
+            title: ""
           });
         }
         

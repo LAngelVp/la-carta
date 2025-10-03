@@ -7,4 +7,5 @@ export interface Presentation {
   comment?: string;
   grammage?: string;
   prices?: Price[] | number;
+  image?:string;
 }
