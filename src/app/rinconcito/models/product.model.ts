@@ -6,7 +6,7 @@ export interface Product {
   comment?: string;
   ingredients?: string;
   sizes?: Size[]
-  presentations?: Presentation[]
+  presentations: Presentation[]
   grammage?: string; 
   price?: number;
   image?: string | null;
