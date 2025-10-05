@@ -1,10 +1,10 @@
 import { Component, inject, OnInit, signal, Signal } from '@angular/core';
-import { Carousel } from '../../components/carousel/carousel';
 import { CommonModule } from '@angular/common';
 import { Cabecera } from "../../components/cabecera/cabecera";
 import { ProductsMenu } from '../../services/products-menu';
-import { Category } from '../../models/category.model';
+import { Category } from '../../../InterfaceGlobales/category.model';
 import { MenuCategories } from "../../components/menu-categories/menu-categories";
+import { ListaEspecialidades } from "../../components/lista-especialidades/lista-especialidades";
 
 interface CarouselItem {
   imageSrc: string;
@@ -13,10 +13,10 @@ interface CarouselItem {
 @Component({
   selector: 'app-home-rinconcito',
   imports: [
-    Carousel,
     CommonModule,
     Cabecera,
-    MenuCategories
+    MenuCategories,
+    ListaEspecialidades
 ],
   templateUrl: './home-rinconcito.html',
   styleUrl: './home-rinconcito.css'

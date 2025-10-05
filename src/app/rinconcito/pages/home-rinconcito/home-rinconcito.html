@@ -1,14 +1,16 @@
-<div class="relative h-screen">
+<div class="relative">
   <app-cabecera></app-cabecera>
 </div>
-<div class="relative min-h-screen bg-gray-100 p-4"
->
-  <app-carousel [especialidades]="especialidades"></app-carousel>
-</div>
-<div class="relative">
-  <app-menu-categories 
-      [categorias]="categorias()"
-      [titulo]="tituloEspecialidades">
-    </app-menu-categories>
+<div class="relative bg-white z-1">
+  <div class="relative"
+  >
+    <app-lista-especialidades [especialidades]="especialidades"></app-lista-especialidades>
+  </div>
+  <div class="relative">
+    <app-menu-categories 
+        [categorias]="categorias()"
+        [titulo]="tituloEspecialidades">
+      </app-menu-categories>
+  </div>
 </div>
 

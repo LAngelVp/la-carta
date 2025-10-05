@@ -1,15 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, Signal, HostListener, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
+import { Component, HostListener, Inject, Input, PLATFORM_ID, Signal } from '@angular/core';
+import { Category } from '../../../InterfaceGlobales/category.model';
 import { AnimacionesGlobales } from '../../../serviciosGlobales/animaciones-globales';
-import { Category } from '../../models/category.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-carousel',
-  imports: [CommonModule],
-  templateUrl: './carousel.html'
+  selector: 'app-lista-especialidades',
+  imports: [
+    CommonModule
+  ],
+  templateUrl: './lista-especialidades.html',
+  styleUrl: './lista-especialidades.css'
 })
-export class Carousel implements AfterViewInit{
-  @Input() especialidades!: Signal<Category[]>;
+export class ListaEspecialidades {
+  imgCabecera : string = "/elRinconcito/logosIconos/oceano.jpg"
+@Input() especialidades!: Signal<Category[]>;
   currentSlide = 0;
   
   // Variables para el modal de imagen
