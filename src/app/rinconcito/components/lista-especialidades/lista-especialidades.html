@@ -1,5 +1,5 @@
 <div class="gap-2 py-4">
-    <h2 class="text-center text-sm md:text-2xl xl:text-4xl font-bold animate-on-scroll animate-zoom">Lista de Especialidades</h2>
+    <h2 class="text-center text-2xl md:text-2xl xl:text-3xl font-bold animate-on-scroll animate-zoom uppercase">Lista de Especialidades</h2>
     <div class="flex flex-col md:flex-row relative">
       <div class="relative flex justify-center items-center md:w-1/2">
         <img [src]="imagen_platillo" alt="" class="block w-100 h-8/12 cover overflow-hidden animate-on-scroll animate-fade-up">
@@ -21,7 +21,7 @@
                     }
                   </div>
                   
-                  <div class="p-6 h-auto overflow-y-auto altoContenedor">
+                  <div class="p-6 h-[400px] overflow-y-auto md:h-[400px]">
                   
                     @for (producto of categoria.products; track producto.name; let j = $index) {
                       @if (!producto.presentations || producto.presentations.length === 0) {

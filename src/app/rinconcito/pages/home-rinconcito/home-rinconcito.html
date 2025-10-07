@@ -5,7 +5,7 @@
     <app-lista-especialidades [especialidades]="especialidades"></app-lista-especialidades>
 </div>
 <div class="relative bg-white h-full">
-  <h1 class="text-center text-lg font-bold py-3 md:text-2xl xl:text-3xl">Menús Disponibles</h1>
+  <h1 class="text-center text-2xl md:text-2xl xl:text-3xl font-bold py-3 uppercase">Menús Disponibles</h1>
   
   <!-- Componente hijo -->
   <app-tipo-menus-botones 
@@ -15,7 +15,7 @@
   
   <!-- Mostrar el botón seleccionado -->
   @if (botonSeleccionado) {
-    <div class="container">
+    <div class="w-full">
       <!-- Mostrar estado de carga -->
       @if (cargando) {
         <div class="cargando">

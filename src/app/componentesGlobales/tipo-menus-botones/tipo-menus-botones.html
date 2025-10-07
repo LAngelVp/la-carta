@@ -1,9 +1,9 @@
 <div>
-    <div class="flex gap-2 w-full justify-center items-center pb-4">
+    <div class="flex gap-2 w-full justify-center items-center py-4">
         @for (item of botones; track $index) {
-            <button class=" bg-orange-500 p-2 rounded-lg text-bold text-white"
+            <button class=" bg-orange-500 p-2 rounded font-bold text-white text-lg transition-all duration-300 hover:cursor-pointer hover:-translate-y-1 hover:shadow-2xl focus:bg-orange-800"
             (click)="obtenerNombreBoton(item)">
-                {{item}}
+                {{item | uppercase}}
             </button>
         }
     </div>

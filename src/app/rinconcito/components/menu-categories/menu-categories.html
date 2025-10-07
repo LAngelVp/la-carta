@@ -24,8 +24,10 @@
 
 
 @if (mostrarModal) {
-  <app-productos-cards
-    [productosSeleccionados]="categoriaSeleccionada"
-    (modalCerrado)="onModalCerrado()">
-  </app-productos-cards>
+  <div class="w-full flex justify-center items-center">
+    <app-productos-cards
+      [productosSeleccionados]="categoriaSeleccionada"
+      (modalCerrado)="onModalCerrado()">
+    </app-productos-cards>
+  </div>
 }
