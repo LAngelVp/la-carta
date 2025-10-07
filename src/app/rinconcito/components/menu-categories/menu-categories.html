@@ -1,32 +1,31 @@
-<!-- Tu contenido normal -->
-    <div class="bg-white py-5">
-      <div class="bg-white rounded-xl shadow-2xl border border-gray-100 p-6 w-10/12 md:w-10/12 mx-auto">
-        <h2 class="text-2xl text-gray-800 mb-6 text-center font-bold">{{ titulo | uppercase }}</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          @for (categoria of categorias; track $index) {
-            <button 
-              (click)="abrirModal(categoria)"
-              class="bg-white p-5 rounded-xl border border-yellow-200 transition-all duration-300 hover:shadow-lg hover:border-orange-200 hover:-translate-y-1 text-left group w-full">
-              
-              <div class="flex justify-between items-center mb-3">
-                <h3 class="font-semibold text-gray-800 text-lg">
-                  {{ categoria.name | uppercase }}
-                </h3>
-                <span class="bg-yellow-100 text-orange-600 text-xs px-3 py-1 rounded-full group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 font-medium">
-                  {{ categoria.products.length || 0 }}
-                </span>
-              </div>
-            </button>
-          }
-        </div>
-      </div>
+<div class="bg-white py-5">
+  <div class="bg-white rounded-xl shadow-2xl border border-gray-100 p-6 w-10/12 md:w-10/12 mx-auto">
+    <h2 class="text-2xl text-gray-800 mb-6 text-center font-bold">{{ titulo | uppercase }}</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      @for (categoria of categorias; track $index) {
+        <button 
+          (click)="abrirModal(categoria)"
+          class="bg-white p-5 rounded-xl border border-yellow-200 transition-all duration-300 hover:shadow-lg hover:border-orange-200 hover:-translate-y-1 text-left group w-full">
+          
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="font-semibold text-gray-800 text-lg">
+              {{ categoria.name | uppercase }}
+            </h3>
+            <span class="bg-yellow-100 text-orange-600 text-xs px-3 py-1 rounded-full group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 font-medium">
+              {{ categoria.products?.length || 0 }}
+            </span>
+          </div>
+        </button>
+      }
     </div>
+  </div>
+</div>
 
-    <!-- Modal AL FINAL y FUERA de cualquier contenedor restrictivo -->
-    @if (mostrarModal) {
-      <app-productos-cards
-        [productosSeleccionados]="categoriaSeleccionada"
-        (modalCerrado)="onModalCerrado()">
-      </app-productos-cards>
-    }
+
+@if (mostrarModal) {
+  <app-productos-cards
+    [productosSeleccionados]="categoriaSeleccionada"
+    (modalCerrado)="onModalCerrado()">
+  </app-productos-cards>
+}

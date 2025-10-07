@@ -81,6 +81,11 @@ export class ListaEspecialidades {
   }
 
   getTotalProducts(categoria: Category): number {
+    // Validar que products exista y sea un array
+    if (!categoria.products || !Array.isArray(categoria.products)) {
+      return 0;
+    }
+
     let total = 0;
     for (const producto of categoria.products) {
       if (producto.presentations && producto.presentations.length > 0) {
@@ -155,23 +160,38 @@ export class ListaEspecialidades {
   private collectAllImages() {
     this.allImages = [];
     
-    this.especialidades().forEach(categoria => {
+    // Validar que especialidades() exista y sea un array
+    const especialidadesData = this.especialidades();
+    if (!especialidadesData || !Array.isArray(especialidadesData)) {
+      return;
+    }
+
+    especialidadesData.forEach(categoria => {
+      // Validar que la categoría y sus productos existan
+      if (!categoria?.products || !Array.isArray(categoria.products)) {
+        return; // Saltar esta categoría si no tiene productos
+      }
+
       categoria.products.forEach(producto => {
+        // Validar que el producto exista
+        if (!producto) return;
+
         // Solo agregar productos que tengan imagen
         if (producto.image) {
           this.allImages.push({
             src: producto.image,
-            title: ""
+            title: producto.name || "" // Usar nombre del producto o string vacío
           });
         }
         
         // Agregar presentaciones que tengan imagen
-        if (producto.presentations) {
+        if (producto.presentations && Array.isArray(producto.presentations)) {
           producto.presentations.forEach(presentacion => {
-            if (presentacion.image) {
+            // Validar que la presentación exista y tenga imagen
+            if (presentacion?.image) {
               this.allImages.push({
                 src: presentacion.image,
-                title: `${producto.name} - ${presentacion.name}`
+                title: `${producto.name || 'Producto'} - ${presentacion.name || 'Presentación'}`
               });
             }
           });

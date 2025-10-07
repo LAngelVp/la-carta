@@ -2,7 +2,7 @@ import { Component, EventEmitter, Inject, Input, Output, PLATFORM_ID } from '@an
 import { Category } from '../../../InterfaceGlobales/category.model';
 import { CommonModule } from '@angular/common';
 import { AnimacionesGlobales } from '../../../serviciosGlobales/animaciones-globales';
-import { ProductosCards } from "../../../componentesGlobales/not-found/productos-cards/productos-cards";
+import { ProductosCards } from '../../../componentesGlobales/productos-cards/productos-cards';
 
 @Component({
   selector: 'app-menu-categories',

@@ -2,15 +2,44 @@
   <app-cabecera></app-cabecera>
 </div>
 <div class="relative bg-white z-1">
-  <div class="relative"
-  >
     <app-lista-especialidades [especialidades]="especialidades"></app-lista-especialidades>
-  </div>
-  <div class="relative">
-    <app-menu-categories 
-        [categorias]="categorias()"
-        [titulo]="tituloEspecialidades">
-      </app-menu-categories>
-  </div>
+</div>
+<div class="relative bg-white h-full">
+  <h1 class="text-center text-lg font-bold py-3 md:text-2xl xl:text-3xl">Menús Disponibles</h1>
+  
+  <!-- Componente hijo -->
+  <app-tipo-menus-botones 
+    [botones]="nombres"
+    (botonSeleccionado)="onBotonSeleccionado($event)">
+  </app-tipo-menus-botones>
+  
+  <!-- Mostrar el botón seleccionado -->
+  @if (botonSeleccionado) {
+    <div class="container">
+      <!-- Mostrar estado de carga -->
+      @if (cargando) {
+        <div class="cargando">
+          <p>Cargando categorías...</p>
+        </div>
+      }
+
+      <!-- Mostrar categorías cuando hay datos -->
+      @if (categorias().length > 0 && !cargando) {
+        <div class="categorias-container">
+          <app-menu-categories 
+            [categorias]="categorias()"
+            [titulo]="tituloEspecialidades">
+          </app-menu-categories>
+        </div>
+      }
+
+      <!-- Mensaje cuando no hay categorías -->
+      @if (categorias().length === 0 && botonSeleccionado && !cargando) {
+        <div class="sin-categorias">
+          <p>No hay categorías disponibles para {{ botonSeleccionado }}</p>
+        </div>
+      }
+    </div>
+  }
 </div>
 

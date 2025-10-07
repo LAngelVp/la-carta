@@ -1,0 +1,10 @@
+<div>
+    <div class="flex gap-2 w-full justify-center items-center pb-4">
+        @for (item of botones; track $index) {
+            <button class=" bg-orange-500 p-2 rounded-lg text-bold text-white"
+            (click)="obtenerNombreBoton(item)">
+                {{item}}
+            </button>
+        }
+    </div>
+</div>

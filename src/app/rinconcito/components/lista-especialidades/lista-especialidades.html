@@ -5,24 +5,24 @@
         <img [src]="imagen_platillo" alt="" class="block w-100 h-8/12 cover overflow-hidden animate-on-scroll animate-fade-up">
       </div>
       <div class="relative w-full max-w-6xl mx-auto animate-on-scroll animate-fade-up md:w-1/2">
-        <!-- Contenedor principal -->
+        
         <div class="relative overflow-hidden w-full">
-            <!-- Iterar sobre las categorías -->
+            
             @for (categoria of especialidades(); track categoria.name; let i = $index) {
               <div class="w-full flex-shrink-0 px-4 py-5">
-                <!-- Card de categoría -->
+                
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200">
                   
-                  <!-- Header de la categoría -->
+                  
                   <div class="bg-gradient-to-r from-yellow-700 to-orange-600 py-2 text-white">
                     <h2 class="text-2xl font-bold text-center">{{ categoria.name | uppercase}}</h2>
                     @if (categoria.comment) {
                       <p class="text-center text-blue-100 mt-2 text-sm">{{ categoria.comment }}</p>
                     }
                   </div>
-                  <!-- Contenido de productos -->
+                  
                   <div class="p-6 h-auto overflow-y-auto altoContenedor">
-                    <!-- Productos simples (sin presentaciones) -->
+                  
                     @for (producto of categoria.products; track producto.name; let j = $index) {
                       @if (!producto.presentations || producto.presentations.length === 0) {
                         <div class="border-b border-gray-100 py-3 last:border-b-0">
@@ -30,7 +30,7 @@
                             <div class="flex-1">
                               <div class="flex items-center gap-2 mb-2">
                                 <h3 class="font-semibold text-gray-800">{{ producto.name }}</h3>
-                                <!-- Botón para previsualizar imagen - SOLO SI TIENE IMAGEN -->
+                  
                                 @if (producto.image) {
                                   <button 
                                     (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
@@ -45,7 +45,7 @@
                                     Ver imagen
                                   </button>
                                 } @else {
-                                  <!-- Botón deshabilitado cuando no hay imagen -->
+                  
                                   <button 
                                     disabled
                                     class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed"
@@ -73,14 +73,14 @@
                         </div>
                       }
                     }
-                    <!-- Productos con presentaciones -->
+                    
                     @for (producto of categoria.products; track producto.name; let k = $index) {
                       @if (producto.presentations && producto.presentations.length > 0) {
                         <div class="border-b border-gray-100 py-4 last:border-b-0">
-                          <!-- Nombre principal del producto -->
+                    
                           <div class="flex items-center gap-2 mb-3">
                             <h3 class="font-bold text-gray-800 text-lg">{{ producto.name | uppercase}}</h3>
-                            <!-- Botón para previsualizar imagen del producto principal -->
+                    
                             @if (producto.image) {
                               <button 
                                 (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
@@ -95,7 +95,7 @@
                                 Ver imagen
                               </button>
                             } @else {
-                              <!-- Botón deshabilitado cuando no hay imagen -->
+                    
                               <button 
                                 disabled
                                 class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed"
@@ -110,11 +110,11 @@
                               </button>
                             }
                           </div>
-                          <!-- Comentario del producto -->
+                    
                           @if (producto.comment) {
                             <p class="text-sm text-gray-600 mb-3 italic">{{ producto.comment }}</p>
                           }
-                          <!-- Lista de presentaciones -->
+                    
                           <div class="space-y-2 ml-4">
                             @for (presentacion of producto.presentations; track presentacion.name; let l = $index) {
                               <div class="flex justify-between items-start">
@@ -122,7 +122,7 @@
                                   <div class="flex items-center gap-2">
                                     <p class="text-gray-700">{{ presentacion.name }}</p>
                                     
-                                    <!-- Botón para presentaciones (solo si tiene imagen) -->
+                    
                                     @if (presentacion.image) {
                                       <button 
                                         (click)="openImagePreview(presentacion.image, presentacion.name || 'Producto sin nombre')"
@@ -158,7 +158,7 @@
               </div>
             }
         </div>
-        <!-- Indicadores de posición -->
+        
         @if (especialidades().length > 1) {
           <div class="flex justify-center mt-6 space-x-3">
             @for (categoria of especialidades(); track categoria.name; let i = $index) {
@@ -174,13 +174,13 @@
     </div>
 </div>
 
-<!-- Modal para previsualizar imagen -->
+
 @if (showImagePreview) {
   <div class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
        (click)="closeImagePreview()">
     <div class="relative max-w-4xl max-h-full" (click)="$event.stopPropagation()">
       
-      <!-- Botón cerrar -->
+
       <button 
         (click)="closeImagePreview()"
         class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10 p-2"
@@ -190,7 +190,7 @@
         </svg>
       </button>
       
-      <!-- Contenedor de la imagen -->
+
       <div class="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
         <div class="relative">
           <img 
@@ -200,7 +200,7 @@
             (error)="handleImageError()"
             (load)="imageLoaded = true">
           
-          <!-- Spinner de carga -->
+
           @if (!imageLoaded) {
             <div class="absolute inset-0 flex items-center justify-center bg-gray-800">
               <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
@@ -208,7 +208,7 @@
           }
         </div>
         
-        <!-- Título de la imagen -->
+
         <div class="p-4 bg-gray-900 border-t border-gray-700">
           <h3 class="text-lg font-semibold text-white text-center">{{ currentImageTitle }}</h3>
         </div>
