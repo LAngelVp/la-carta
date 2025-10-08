@@ -21,7 +21,7 @@ export class Cabecera {
       accion: () => this.redirigir(this.botonesContacto[0].url)
     },
     {
-      name: "WhatApp",
+      name: "WhatsApp",
       url: "https://wa.me/522787387082",
       image: "/icons/whatsappWhite.svg",
       accion: () => this.redirigir(this.botonesContacto[1].url)
