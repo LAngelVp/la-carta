@@ -5,7 +5,6 @@ import { ProductsMenu } from '../../services/products-menu';
 import { Category } from '../../../InterfaceGlobales/category.model';
 import { MenuCategories } from "../../components/menu-categories/menu-categories";
 import { ListaEspecialidades } from "../../components/lista-especialidades/lista-especialidades";
-import { BotonesMenu } from "../../../AsaderoLala/component/botones-menu/botones-menu";
 import { TipoMenusBotones } from "../../../componentesGlobales/tipo-menus-botones/tipo-menus-botones";
 @Component({
   selector: 'app-home-rinconcito',
@@ -68,7 +67,7 @@ export class HomeRinconcito implements OnInit{
       console.log(`Categorías para ${nombreMenu}:`, categoriasObtenidas);
       
       // Actualizar el título dinámicamente si quieres
-      this.tituloEspecialidades = `Especialidades - ${nombreMenu}`;
+      this.tituloEspecialidades = `${nombreMenu}`;
       
     } catch(error) {
       console.error("Error al obtener categorías:", error);
@@ -78,32 +77,6 @@ export class HomeRinconcito implements OnInit{
       this.cdRef.detectChanges(); // Forzar actualización de la vista
     }
   }
-  // title = 'my-carousel-app';
-  // tituloEspecialidades : string = "Menú del rinconcito";
-  // private productosServicio = inject(ProductsMenu);
-  // especialidades = signal<Category[]>([]);
-  
-
-  // constructor() {
-  //   this.obtenerEspecialidadesServicio();
-  //   this.obtenerProductosCategorias();
-  // }
-
-  // async obtenerProductosCategorias() {
-  //   try {
-  //       const categorias = this.productosServicio.getCategories();
-        
-  //       if (categorias && Array.isArray(categorias)) {
-  //         this.categorias.set(categorias);
-  //         console.log('Categorías obtenidas:', this.categorias());
-  //       } else {
-  //         console.log("No se encontraron categorías");
-  //       }
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //       alert('Error al obtener las categorías');
-  //     }
-  //   }
   
   obtenerEspecialidadesServicio() {
   try {

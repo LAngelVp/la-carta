@@ -50,7 +50,7 @@ export class ProductsMenu {
                 price: 215
               }
             ],
-            image: null
+            image: "/elRinconcito/imgs/coctel.jpg"
           },
           {
             name: "TACOS",
@@ -69,7 +69,7 @@ export class ProductsMenu {
                 price: 140
               }
             ],
-            image: null
+            image: "/elRinconcito/imgs/tacosMixtos.jpg"
           },
           {
             name: "TOSTADAS",
@@ -141,7 +141,7 @@ export class ProductsMenu {
                 price: 160
               }
             ],
-            image: null
+            image: "/elRinconcito/imgs/camaronesParaPelar.jpg"
           },
           {
             name: "ARROZ CON CAMARONES",
@@ -157,17 +157,20 @@ export class ProductsMenu {
             {
               name: "Langostinos al mojo de ajo",
               comment: "Orden",
-              price: 450
+              price: 450,
+              image: "/elRinconcito/imgs/langostinoMojoAjo.jpg"
             },
             {
               name: "Langostinos enchipotlados",
               comment: "Orden",
-              price: 450
+              price: 450,
+              image: "/elRinconcito/imgs/langostinosEnchipotlados.jpg"
             },
             {
               name: "Agua chile de camarón",
               comment: "Orden",
-              price: 310
+              price: 310,
+              image: "/elRinconcito/imgs/aguaChileCamaron.jpg"
             },
             {
               name: "Chilpachole de robalo con langostinos",
@@ -191,7 +194,8 @@ export class ProductsMenu {
             },
             {
               name: "Torre de mariscos",
-              price: 410
+              price: 410,
+              image:"/elRinconcito/imgs/torreMariscos.jpg"
             },
           ]
         },
@@ -302,7 +306,8 @@ export class ProductsMenu {
             {
               name: "Empanizados",
               price: 245,
-              ingredients: "(Ensalada, Papas y Arroz)"
+              ingredients: "(Ensalada, Papas y Arroz)",
+              image: "/elRinconcito/imgs/camaronesEmpanizados.jpg"
             },
             {
               name: "Rellenos de Queso C/Tocino",
@@ -474,7 +479,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: null
             },
             {
               name: "Langostino al mojo de ajo",
@@ -510,7 +515,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: "/elRinconcito/imgs/langostinosEnchipotlados.jpg"
             },
             {
               name: "Langostino a la mantequilla",
@@ -528,7 +533,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: null
             },
             {
               name: "Langostino a la diabla",
@@ -546,7 +551,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: null
             },
             {
               name: "Langostino en salsa verde",
@@ -564,7 +569,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: null
             },
             {
               name: "Langostino a la chilpaya",
@@ -582,7 +587,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: "/elRinconcito/imgs/langostinosChilpaya.jpg"
             },
             {
               name: "Langostino al mojo de ajo con habanero",
@@ -600,7 +605,7 @@ export class ProductsMenu {
                   price: 450
                 },
               ],
-              image: "/elRinconcito/imgs/langostinosMojoAjo.jpg"
+              image: null
             },
           ]
         },
@@ -803,7 +808,8 @@ export class ProductsMenu {
             {
               name: "Hamburguesa",
               comment: "Incluye una porción de papas",
-              price: 175
+              price: 175,
+              image: "/elRinconcito/imgs/hamburguesa.jpg"
             },
           ]
         },
