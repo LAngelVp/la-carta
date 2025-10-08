@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.css'
 })
 export class App{
-  protected readonly title = signal('LaCarta');
+  protected readonly title = signal('La Carta');
   
-
 }
