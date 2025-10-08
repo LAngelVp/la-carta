@@ -4,8 +4,8 @@
         [style.background-image]="'url(' + imgCabecera + ')'"
     ></div>
     @for (boton of botonesContacto; track $index) {
-        <div class="relative flex flex-col justify-center items-center pb-5 h-screen">
-            <button type="button" class=" text-gray-900 bg-[#b0b0b0b6] hover:bg-[#b0b0b0]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-md px-3 md:px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2 gap-1 fontSUSE animate-on-scroll animate-zoom"
+        <div class="relative flex flex-col justify-center items-center h-screen">
+            <button type="button" class=" text-gray-900 bg-[#b0b0b0b6] hover:bg-[#b0b0b0]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-md px-2 md:px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2 gap-1 fontSUSE animate-on-scroll animate-zoom"
             (click)="manejarClic(boton)"
             >
                <img [src]="boton.image" alt="">
