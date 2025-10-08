@@ -1,26 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=BBH+Sans+Bogle&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
+/* @import url('/Fuentes/fuentes.css'); */
 
-.playfair {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  /* font-weight: <weight>; */
+:root {
+  --font-anton: 'Anton', sans-serif;
+  --font-bogle: 'BBH', sans-serif;
+  --font-suse: 'SUSE', monospace;
+}
+
+.fontAnton{
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
-.lora {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  /* font-weight: <weight>; */
+.fontBBH{
+  font-family: "BBH Sans Bogle", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
-.raleway {
-  font-family: "Raleway", sans-serif;
+.fontSUSE{
+  font-family: "SUSE Mono", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: <weight>; */
   font-style: normal;
+}
+
+/* Opcional: Estilos base */
+body {
+  overflow-x: hidden;
 }
 
 .lista_producto {

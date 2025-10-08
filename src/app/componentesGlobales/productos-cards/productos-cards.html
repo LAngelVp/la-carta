@@ -3,7 +3,7 @@
   
   <!-- Header fijo en la parte superior -->
   <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-white sticky top-0 z-20 shadow-sm">
-    <h2 class="text-2xl font-bold text-gray-800">
+    <h2 class="text-2xl font-bold text-gray-800 fontAnton tracking-widest">
       {{ productosSeleccionados?.name | uppercase }}
     </h2>
     <button 
@@ -23,7 +23,7 @@
           
           <!-- Header de la categoría -->
           <div class="mb-6">
-            <h3 class="text-xl font-bold text-gray-800">{{ productosSeleccionados.name | uppercase}}</h3>
+            <h3 class="text-xl font-bold text-gray-800 fontAnton tracking-widest">{{ productosSeleccionados.name | uppercase}}</h3>
           </div>
 
           <!-- Preparaciones -->
@@ -58,12 +58,12 @@
               <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 bg-white h-fit">
                 <div class="flex justify-between items-start mb-2">
                   <div class="flex items-center gap-2">
-                    <h4 class="font-semibold text-gray-800 text-lg">{{ producto.name }}</h4>
+                    <h4 class="font-semibold text-gray-800 text-lg fontBBH tracking-widest">{{ producto.name }}</h4>
                     <!-- Botón para previsualizar imagen - SOLO SI TIENE IMAGEN -->
                     @if (producto.image) {
                       <button 
                         (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
-                        class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200"
+                        class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE tracking-widest"
                         title="Ver imagen del producto">
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -77,7 +77,7 @@
                       <!-- Botón deshabilitado cuando no hay imagen -->
                       <button 
                         disabled
-                        class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed"
+                        class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed fontSUSE"
                         title="No hay imagen disponible">
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -90,28 +90,28 @@
                     }
                   </div>
                   @if (producto.price) {
-                    <span class="text-lg font-bold text-green-600 ml-4 whitespace-nowrap">
+                    <span class="text-lg font-bold text-green-600 ml-4 whitespace-nowrap fontBBH">
                       ${{ producto.price }}
                     </span>
                   }
                 </div>
                 
                 @if (producto.comment) {
-                  <p class="text-sm text-gray-600 mb-3">{{ producto.comment }}</p>
+                  <p class="text-sm text-gray-600 mb-3 fontSUSE font-bold">{{ producto.comment }}</p>
                 }
                 
                 @if (producto.ingredients) {
-                  <p class="text-sm text-gray-600 mb-3">{{ producto.ingredients }}</p>
+                  <p class="text-sm text-gray-600 mb-3 fontSUSE">{{ producto.ingredients }}</p>
                 }
                 
                 @if (producto.sizes) {
                   <div class="flex flex-col gap-2 mb-3">
                     @for (elemento of producto.sizes; track $index) {
                       <div class="flex justify-between items-center border border-green-200 shadow-sm rounded p-2 bg-green-50">
-                        <span class="text-sm font-bold text-green-700">
+                        <span class="text-sm font-bold text-green-700 fontBBH tracking-wider">
                           {{ elemento.name | uppercase}}
                         </span>
-                        <span class="text-sm font-bold text-green-700">
+                        <span class="text-sm font-bold text-green-70 fontBBH tracking-wider">
                           ${{ elemento.price }}
                         </span>
                       </div>
@@ -123,15 +123,15 @@
                 @if (producto.presentations && producto.presentations.length > 0) {
                   <div class="mt-3 space-y-3 pt-3 border-t border-gray-100">
                     @for (presentacion of producto.presentations; track $index) {
-                      <div class="bg-gray-50 rounded p-3">
+                      <div class="bg-gray-50 rounded px-3">
                         <div class="flex justify-between items-center mb-1">
-                          <div class="flex items-center gap-2">
-                            <span class="text-sm font-medium text-gray-700">{{ presentacion.name }}</span>
+                          <div class="flex items-center gap-1">
+                            <span class="text-sm font-medium text-gray-700 fontBBH tracking-widest">{{ presentacion.name }}</span>
                             <!-- Botón para previsualizar imagen de presentación -->
                             @if (presentacion.image) {
                               <button 
                                 (click)="openImagePreview(presentacion.image, presentacion.name || 'Presentación sin nombre')"
-                                class="flex items-center gap-1 px-2 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-lg transition-colors duration-200"
+                                class="flex items-center gap-1 px-2 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE"
                                 title="Ver imagen de esta presentación">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -144,11 +144,11 @@
                             }
                           </div>
                           @if (presentacion.price) {
-                            <span class="font-semibold text-green-600">${{ presentacion.price }}</span>
+                            <span class="font-semibold text-green-600 fontBBH tracking-wider">${{ presentacion.price }}</span>
                           }
                         </div>
                         @if (presentacion.ingredients) {
-                          <p class="text-xs text-gray-500">{{ presentacion.ingredients }}</p>
+                          <p class="text-xs text-gray-500 fontSUSE">{{ presentacion.ingredients }}</p>
                         }
                       </div>
                     }
@@ -156,7 +156,7 @@
                 }
               </div>
             } @empty {
-              <div class="col-span-3 text-center py-12">
+              <div class="col-span-3 text-center py-12 fontBBH tracking-widest">
                 <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2M4 13h2"></path>
                 </svg>
@@ -167,7 +167,7 @@
         </div>
       } @else {
         <div class="text-center py-12 bg-white rounded-xl shadow-sm border border-gray-200">
-          <p class="text-gray-500 text-lg">Selecciona una categoría para ver sus productos</p>
+          <p class="text-gray-500 text-lg fontBBH tracking-widest">Selecciona una categoría para ver sus productos</p>
         </div>
       }
     </div>

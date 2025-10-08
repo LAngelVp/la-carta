@@ -1,10 +1,26 @@
 <div class="gap-2 py-4">
-    <h2 class="text-center text-2xl md:text-2xl xl:text-3xl font-bold animate-on-scroll animate-zoom uppercase">Lista de Especialidades</h2>
+    <h2 class="
+      text-center text-2xl md:text-2xl xl:text-3xl 
+    font-bold animate-on-scroll animate-zoom w-11/12 md:w-6/12 mx-auto
+    uppercase tracking-widest fontAnton mb-5
+    
+    bg-gradient-to-r from-amber-700 to-amber-800
+    border border-amber-500
+    rounded-2xl 
+    
+    shadow-lg shadow-amber-900/50
+    px-6 py-4 
+    text-amber-100
+    hover:shadow-xl hover:shadow-amber-900/60
+    transition-all duration-300 
+    ">
+      Lista de Especialidades
+    </h2>
     <div class="flex flex-col md:flex-row relative">
       <div class="relative flex justify-center items-center md:w-1/2">
-        <img [src]="imagen_platillo" alt="" class="block w-100 h-8/12 cover overflow-hidden animate-on-scroll animate-fade-up">
+        <img [src]="imagen_platillo" alt="" class="block w-100 h-8/12 cover overflow-hidden animate-on-scroll animate-fade-right delay-400">
       </div>
-      <div class="relative w-full max-w-6xl mx-auto animate-on-scroll animate-fade-up md:w-1/2">
+      <div class="relative w-full max-w-6xl mx-auto animate-on-scroll animate-fade-left delay-400 md:w-1/2">
         
         <div class="relative overflow-hidden w-full">
             
@@ -14,8 +30,8 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200">
                   
                   
-                  <div class="bg-gradient-to-r from-yellow-700 to-orange-600 py-2 text-white">
-                    <h2 class="text-2xl font-bold text-center">{{ categoria.name | uppercase}}</h2>
+                  <div class="bg-gradient-to-r from-amber-700 to-amber-800 py-2 text-white">
+                    <h2 class="text-2xl font-bold text-center fontAnton tracking-widest">{{ categoria.name | uppercase}}</h2>
                     @if (categoria.comment) {
                       <p class="text-center text-blue-100 mt-2 text-sm">{{ categoria.comment }}</p>
                     }
@@ -34,7 +50,7 @@
                                 @if (producto.image) {
                                   <button 
                                     (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
-                                    class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200"
+                                    class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE"
                                     title="Ver imagen del producto">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -45,10 +61,9 @@
                                     Ver imagen
                                   </button>
                                 } @else {
-                  
                                   <button 
                                     disabled
-                                    class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed"
+                                    class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed fontSUSE"
                                     title="No hay imagen disponible">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -61,11 +76,11 @@
                                 }
                               </div>
                               @if (producto.comment) {
-                                <p class="text-sm text-gray-600 mb-2">{{ producto.comment }}</p>
+                                <p class="text-sm text-gray-600 mb-2 fontSUSE">{{ producto.comment }}</p>
                               }
                             </div>
                             @if (producto.price) {
-                              <span class="text-lg font-bold text-orange-500 ml-4 whitespace-nowrap">
+                              <span class="text-lg font-bold text-orange-500 ml-4 whitespace-nowrap fontBBH">
                                 ${{ producto.price }}
                               </span>
                             }
@@ -79,12 +94,12 @@
                         <div class="border-b border-gray-100 py-4 last:border-b-0">
                     
                           <div class="flex items-center gap-2 mb-3">
-                            <h3 class="font-bold text-gray-800 text-lg">{{ producto.name | uppercase}}</h3>
+                            <h3 class="font-bold text-gray-800 text-lg fontBBH tracking-widest">{{ producto.name | uppercase}}</h3>
                     
                             @if (producto.image) {
                               <button 
                                 (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
-                                class="flex items-center gap-1 px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-lg transition-colors duration-200"
+                                class="flex items-center gap-1 px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE"
                                 title="Ver imagen del producto">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -95,10 +110,9 @@
                                 Ver imagen
                               </button>
                             } @else {
-                    
                               <button 
                                 disabled
-                                class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed"
+                                class="flex items-center gap-1 px-2 py-1 bg-gray-300 text-gray-500 text-xs rounded-lg cursor-not-allowed fontSUSE"
                                 title="No hay imagen disponible">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -120,13 +134,13 @@
                               <div class="flex justify-between items-start">
                                 <div class="flex-1">
                                   <div class="flex items-center gap-2">
-                                    <p class="text-gray-700">{{ presentacion.name }}</p>
+                                    <p class="text-gray-700 fontBBH tracking-widest">{{ presentacion.name }}</p>
                                     
                     
                                     @if (presentacion.image) {
                                       <button 
                                         (click)="openImagePreview(presentacion.image, presentacion.name || 'Producto sin nombre')"
-                                        class="flex items-center gap-1 px-2 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-lg transition-colors duration-200"
+                                        class="flex items-center gap-1 px-2 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE"
                                         title="Ver imagen de esta presentación">
                                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -139,11 +153,11 @@
                                     }
                                   </div>
                                   @if (presentacion.ingredients) {
-                                    <p class="text-xs text-gray-500 mt-1">{{ presentacion.ingredients }}</p>
+                                    <p class="text-xs text-gray-500 mt-1 fontSUSE">{{ presentacion.ingredients }}</p>
                                   }
                                 </div>
                                 @if (presentacion.price) {
-                                  <span class="font-semibold text-orange-500 ml-4 whitespace-nowrap">
+                                  <span class="font-semibold text-orange-500 ml-4 whitespace-nowrap fontBBH">
                                     ${{ presentacion.price }}
                                   </span>
                                 }
