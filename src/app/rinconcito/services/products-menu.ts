@@ -141,7 +141,7 @@ export class ProductsMenu {
                 price: 160
               }
             ],
-            image: "/elRinconcito/imgs/camaronesParaPelar.jpg"
+            image: ""
           },
           {
             name: "ARROZ CON CAMARONES",
