@@ -2,7 +2,7 @@
 <div class="fixed inset-0 bg-white z-50 animate-fade-in">
   
   <!-- Header fijo en la parte superior -->
-  <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-white sticky top-0 z-20 shadow-sm">
+  <div class="flex justify-between items-center p-4 border-b border-gray-400 bg-white sticky top-0 z-20 shadow-sm">
     <h2 class="text-2xl font-bold text-gray-800 fontAnton tracking-widest">
       {{ productosSeleccionados?.name | uppercase }}
     </h2>
@@ -63,7 +63,7 @@
                     @if (producto.image) {
                       <button 
                         (click)="openImagePreview(producto.image, producto.name || 'Producto sin nombre')"
-                        class="flex items-center gap-1 px-2 py-1 bg-orange-400 hover:bg-orange-600 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE tracking-widest"
+                        class="flex items-center gap-1 px-2 py-1 bg-green-700 hover:bg-green-800 text-white text-xs rounded-lg transition-colors duration-200 fontSUSE tracking-widest"
                         title="Ver imagen del producto">
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 

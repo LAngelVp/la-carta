@@ -6,13 +6,13 @@
       @for (categoria of categorias; track $index) {
         <button 
           (click)="abrirModal(categoria)"
-          class="bg-white p-5 rounded-xl border border-yellow-200 transition-all duration-300 hover:shadow-lg hover:border-orange-200 hover:-translate-y-1 text-left group w-full">
+          class="bg-white p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-slate-200 hover:-translate-y-1 text-left group w-full">
           
           <div class="flex justify-between items-center mb-3">
             <h3 class="font-semibold text-gray-800 text-lg fontBBH tracking-wider">
               {{ categoria.name | uppercase }}
             </h3>
-            <span class="bg-yellow-100 text-orange-600 text-xs px-3 py-1 rounded-full group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 font-medium fontSUSE">
+            <span class="bg-esmerald-100 text-emerald-600 text-xs px-3 py-1 rounded-full group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 font-medium fontSUSE">
               {{ categoria.products?.length || 0 }}
             </span>
           </div>
